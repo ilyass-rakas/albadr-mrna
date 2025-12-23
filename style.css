@@ -15,33 +15,41 @@ body {
 }
 
 /* =========================================
-   NAVBAR
+   NAVBAR (DESKTOP)
    ========================================= */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 15px 40px;
+  padding: 10px 40px; 
   background: rgba(0, 0, 0, 0.95);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   border-bottom: 1px solid #333;
+  height: 120px; 
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   color: gold;
-  font-size: 20px;
+  font-size: 26px; 
   font-weight: bold;
 }
 
 .logo img {
-  height: 45px;
+  height: 90px; 
   width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav a {
@@ -49,7 +57,7 @@ nav a {
   color: white;
   text-decoration: none;
   transition: 0.3s;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 nav a:hover {
@@ -59,7 +67,7 @@ nav a:hover {
 .btn {
   background: gold;
   color: black;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 5px;
   font-weight: bold;
   border: none;
@@ -97,24 +105,44 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 0; 
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 900px;
   padding: 20px;
+  /* DESKTOP POSITIONING */
+  margin-top: 100px; 
+}
+
+/* BIG CENTRAL LOGO STYLE */
+.hero-logo {
+  display: block;
+  /* DESKTOP: Negative margin to fix transparent space */
+  margin: 0 auto -50px auto; 
+  height: 250px; 
+  width: auto;
+  position: relative;
+  z-index: 2; 
+  filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)); 
 }
 
 .hero h1 {
   font-size: 50px;
   color: gold;
-  margin-bottom: 10px;
+  margin-top: 0; 
+  line-height: 1.1; 
+  margin-bottom: 15px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  position: relative;
+  z-index: 1;
 }
 
 .hero p {
-  margin: 20px 0;
-  font-size: 20px;
+  margin: 20px 0 30px 0;
+  font-size: 22px;
   color: #ddd;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
 .hero-buttons {
@@ -345,7 +373,6 @@ footer p { color: #888; margin-bottom: 10px; }
 
 .legal-info { font-size: 0.8rem; color: #555; margin-top: 15px; }
 
-/* Creator Credit Style */
 .creator-credit {
   margin-top: 15px;
   font-size: 0.75rem;
@@ -358,7 +385,30 @@ footer p { color: #888; margin-bottom: 10px; }
 }
 
 /* =========================================
-   RESPONSIVE (PHONES & TABLETS)
+   TABLET ADAPTATION (iPad, etc.)
+   ========================================= */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  
+  .navbar {
+    padding: 10px 20px;
+    height: 100px;
+  }
+  
+  .logo img { height: 70px; }
+  .logo { font-size: 22px; }
+
+  /* Slightly smaller hero logo for tablets */
+  .hero-logo {
+    height: 200px;
+    /* Adjust negative margin because logo is smaller */
+    margin-bottom: -40px; 
+  }
+
+  .hero h1 { font-size: 42px; }
+}
+
+/* =========================================
+   MOBILE ADAPTATION (Phones)
    ========================================= */
 @media screen and (max-width: 768px) {
   
@@ -367,10 +417,15 @@ footer p { color: #888; margin-bottom: 10px; }
     flex-direction: column;
     padding: 15px 20px;
     height: auto;
-    position: relative;
+    /* Position relative allows user to scroll past menu easily on small screens */
+    position: relative; 
   }
   
-  .logo { margin-bottom: 15px; }
+  .logo { margin-bottom: 15px; font-size: 22px; }
+
+  .logo img {
+      height: 75px; 
+  }
   
   nav {
     display: flex;
@@ -392,8 +447,20 @@ footer p { color: #888; margin-bottom: 10px; }
   /* 2. Hero Adjustments */
   .hero {
     height: auto;
-    min-height: 80vh;
-    padding-top: 40px;
+    min-height: 100vh;
+    padding-top: 40px; 
+  }
+  
+  .hero-content {
+      padding: 40px 20px;
+      margin-top: 40px; 
+  }
+  
+  /* Mobile Central Logo */
+  .hero-logo {
+      height: 160px; /* Smaller for phone screens */
+      /* Adjusted negative margin for smaller logo */
+      margin-bottom: -30px; 
   }
 
   .hero h1 { font-size: 32px; }
