@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/* Floating Language Selector above WhatsApp */
+/* Floating Elements Styles (Kept in HTML for easier editing) */
 #langWrapper {
   position: fixed;
-  bottom: 90px; /* above WhatsApp */
+  bottom: 90px;
   right: 20px;
   z-index: 1002;
   display: flex;
@@ -26,11 +26,12 @@
   padding: 10px 15px;
   cursor: pointer;
   font-weight: bold;
-  box-shadow: 0 0 10px rgba(255,215,0,0.5);
+  border: 1px solid gold;
+  box-shadow: 0 0 10px rgba(255,215,0,0.3);
   transition: 0.3s;
 }
 
-.langButton:hover { transform: scale(1.05); }
+.langButton:hover { transform: scale(1.05); background: gold; color: black; }
 
 .langOptions {
   display: none;
@@ -40,50 +41,66 @@
 }
 
 .langOption {
-  background: #000;
-  color: gold;
+  background: #111;
+  color: white;
+  border: 1px solid #333;
   border-radius: 30px;
-  padding: 10px 15px;
+  padding: 8px 15px;
   cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 0 8px rgba(255,215,0,0.5);
+  font-size: 0.9rem;
   transition: 0.3s;
 }
 
-.langOption:hover { transform: scale(1.05); }
+.langOption:hover { border-color: gold; color: gold; }
 
-/* WhatsApp button */
+/* Black & Gold WhatsApp Button */
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #000;
   color: gold;
-  width: 55px;
-  height: 55px;
+  border: 2px solid gold;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-  transition: 0.3s ease;
+  font-size: 32px;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
   z-index: 999;
 }
 
 .whatsapp:hover {
   background: gold;
   color: #000;
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
+}
+
+/* Mobile Adjustments for Floating Buttons */
+@media screen and (max-width: 768px) {
+    .whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+    }
+    #langWrapper {
+        bottom: 75px;
+        right: 15px;
+    }
 }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <img src="logo.png" alt="AL-BADR MRNA IMMO Logo">
+    <img src="logo.png" alt="AL-BADR" onerror="this.style.display='none'">
     <span>AL-BADR MRNA IMMO</span>
   </div>
   <nav>
@@ -95,7 +112,6 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-content">
     <h1 data-key="heroTitle">Building Your Vision</h1>
@@ -107,7 +123,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="about">
   <h2 data-key="about">About Us</h2>
   <p data-key="aboutText">
@@ -116,20 +131,19 @@
   <div class="about-stats">
     <div>
       <h3>10+</h3>
-      <span>Years Experience</span>
+      <span data-key="yearsExp">Years Experience</span>
     </div>
     <div>
       <h3>250+</h3>
-      <span>Projects Completed</span>
+      <span data-key="projComp">Projects Completed</span>
     </div>
     <div>
       <h3>100%</h3>
-      <span>Client Satisfaction</span>
+      <span data-key="clientSat">Client Satisfaction</span>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="services">
   <h2 data-key="services">Our Services</h2>
   <div class="service-grid">
@@ -156,17 +170,65 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="projects">
   <h2 data-key="projects">Our Projects</h2>
   <div class="project-grid">
-    <div class="project" data-key="projectResidential">Residential Project</div>
-    <div class="project" data-key="projectCommercial">Commercial Project</div>
-    <div class="project" data-key="projectRenovation">Renovation Project</div>
+    
+    <div class="project-card">
+        <div class="image-wrapper">
+            <img src="images/villa-after.png" id="img-1" alt="Villa Renovation">
+            
+            <button class="toggle-btn" onclick="toggleImage('img-1', 'images/villa-before.png', 'images/villa-after.png', this)">
+                <span data-key="btnBefore">Show Before</span>
+            </button>
+            <span class="category-badge" data-key="catRenovation">Renovation</span>
+        </div>
+        <div class="project-content">
+            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Bouskoura, Casablanca</div>
+            <h3 data-key="proj1Title">Luxury Villa Renovation</h3>
+            <p data-key="proj1Desc">Complete transformation of an old villa. We removed load-bearing walls to create an open-plan living space.</p>
+            <div class="tags">
+                <span class="tag">#Structural</span>
+                <span class="tag">#SmartHome</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="image-wrapper">
+            <img src="images/apt-finish.png" alt="Apartment Finishing">
+            <span class="category-badge" data-key="catFinishing">Finishing</span>
+        </div>
+        <div class="project-content">
+            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Maarif, Casablanca</div>
+            <h3 data-key="proj2Title">Modern Apartment Finishing</h3>
+            <p data-key="proj2Desc">High-end finishing for a 120m² apartment. Included marble flooring, custom gypsum ceilings, and concealed LED lighting.</p>
+            <div class="tags">
+                <span class="tag">#Marble</span>
+                <span class="tag">#Lighting</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="image-wrapper">
+            <img src="images/office-main.png" alt="Office Build">
+            <span class="category-badge" data-key="catConstruction">Construction</span>
+        </div>
+        <div class="project-content">
+            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Technopolis, Rabat</div>
+            <h3 data-key="proj3Title">Commercial Office Build</h3>
+            <p data-key="proj3Desc">Construction of a 2-story office space optimized for productivity. Soundproof glass partitions and ergonomic layout.</p>
+            <div class="tags">
+                <span class="tag">#Office</span>
+                <span class="tag">#GlassWork</span>
+            </div>
+        </div>
+    </div>
+
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
   <h2 data-key="contact">Contact Us</h2>
   <form id="contactForm" action="https://formspree.io/f/xbdrqpke" method="POST">
@@ -178,17 +240,17 @@
   </form>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2025 AL-BADR MRNA IMMO — All Rights Reserved</p>
+  <div class="legal-info">
+      RC: 123456 • ICE: 001234567890000 • PATENTE: 98765432
+  </div>
 </footer>
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/212699215556" class="whatsapp" target="_blank">
+<a href="https://wa.me/212699215556?text=Hello%2C%20I%20would%20like%20a%20quote." class="whatsapp" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- Floating Language Selector -->
 <div id="langWrapper">
   <div class="langOptions" id="langOptions">
     <div class="langOption" data-lang="en">English</div>
@@ -199,35 +261,76 @@
 </div>
 
 <script>
-// Translations
+// Image Toggle Logic
+let isBefore = false;
+function toggleImage(imgId, beforeSrc, afterSrc, btn) {
+    const img = document.getElementById(imgId);
+    const span = btn.querySelector('span');
+    const currentLang = document.documentElement.lang || 'en'; 
+    const txtBefore = translations[currentLang].btnBefore;
+    const txtAfter = translations[currentLang].btnAfter;
+
+    if (!isBefore) {
+        img.src = beforeSrc;
+        span.textContent = txtAfter;
+        isBefore = true;
+    } else {
+        img.src = afterSrc;
+        span.textContent = txtBefore;
+        isBefore = false;
+    }
+}
+
+// Translations Data
 const translations = {
-  en:{home:"Home", about:"About Us", services:"Our Services", projects:"Our Projects", contact:"Contact Us", getQuote:"Get a Quote",
+  en:{
+      home:"Home", about:"About Us", services:"Our Services", projects:"Our Projects", contact:"Contact Us", getQuote:"Get a Quote",
       heroTitle:"Building Your Vision", heroDesc:"Construction, Renovation & Real Estate Services",
       aboutText:"AL-BADR MRNA IMMO is a professional construction, renovation, and real estate company delivering high-quality projects with precision, modern techniques, and full respect of deadlines.",
+      yearsExp:"Years Experience", projComp:"Projects Completed", clientSat:"Client Satisfaction",
       serviceConstruction:"Construction", serviceConstructionDesc:"Residential and commercial building services.",
       serviceRenovation:"Renovation", serviceRenovationDesc:"Modern renovation and remodeling solutions.",
       serviceFinishing:"Finishing Works", serviceFinishingDesc:"Interior and exterior finishing with premium quality.",
       serviceElectric:"Electricity & Plumbing", serviceElectricDesc:"Professional and safe installations.",
-      projectResidential:"Residential Project", projectCommercial:"Commercial Project", projectRenovation:"Renovation Project",
-      formName:"Your Name", formEmail:"Email Address", formPhone:"Phone Number", formMessage:"Your Message", formSubmit:"Send Message"},
-  fr:{home:"Accueil", about:"À Propos", services:"Nos Services", projects:"Nos Projets", contact:"Contactez-nous", getQuote:"Demander un devis",
+      catRenovation:"Renovation", catFinishing:"Finishing", catConstruction:"Construction",
+      proj1Title:"Luxury Villa Renovation", proj1Desc:"Complete transformation of an old villa. We removed load-bearing walls to create an open-plan living space.",
+      proj2Title:"Modern Apartment Finishing", proj2Desc:"High-end finishing for a 120m² apartment. Included marble flooring, custom gypsum ceilings, and concealed LED lighting.",
+      proj3Title:"Commercial Office Build", proj3Desc:"Construction of a 2-story office space optimized for productivity. Soundproof glass partitions and ergonomic layout.",
+      btnBefore:"Show Before", btnAfter:"Show Result",
+      formName:"Your Name", formEmail:"Email Address", formPhone:"Phone Number", formMessage:"Your Message", formSubmit:"Send Message"
+  },
+  fr:{
+      home:"Accueil", about:"À Propos", services:"Nos Services", projects:"Nos Projets", contact:"Contactez-nous", getQuote:"Demander un devis",
       heroTitle:"Construire Votre Vision", heroDesc:"Services de Construction, Rénovation & Immobilier",
       aboutText:"AL-BADR MRNA IMMO est une société professionnelle de construction, rénovation et immobilier offrant des projets de haute qualité avec précision, techniques modernes et respect des délais.",
+      yearsExp:"Années d'Expérience", projComp:"Projets Réalisés", clientSat:"Satisfaction Client",
       serviceConstruction:"Construction", serviceConstructionDesc:"Services de construction résidentielle et commerciale.",
       serviceRenovation:"Rénovation", serviceRenovationDesc:"Solutions modernes de rénovation et de remodelage.",
       serviceFinishing:"Finitions", serviceFinishingDesc:"Finitions intérieures et extérieures de qualité premium.",
       serviceElectric:"Électricité & Plomberie", serviceElectricDesc:"Installations professionnelles et sécurisées.",
-      projectResidential:"Projet Résidentiel", projectCommercial:"Projet Commercial", projectRenovation:"Projet de Rénovation",
-      formName:"Votre Nom", formEmail:"Adresse Email", formPhone:"Numéro de Téléphone", formMessage:"Votre Message", formSubmit:"Envoyer le message"},
-  ar:{home:"الرئيسية", about:"معلومات عنا", services:"خدماتنا", projects:"مشاريعنا", contact:"اتصل بنا", getQuote:"طلب عرض سعر",
+      catRenovation:"Rénovation", catFinishing:"Finitions", catConstruction:"Construction",
+      proj1Title:"Rénovation Villa de Luxe", proj1Desc:"Transformation complète d'une villa ancienne. Suppression des murs porteurs pour créer un espace ouvert.",
+      proj2Title:"Finition Appartement Moderne", proj2Desc:"Finition haut de gamme pour un appartement de 120m². Sol en marbre, plafonds en gypse personnalisés et éclairage LED.",
+      proj3Title:"Construction Bureau Commercial", proj3Desc:"Construction d'un espace de bureau sur 2 étages. Cloisons en verre insonorisées et aménagement ergonomique.",
+      btnBefore:"Voir Avant", btnAfter:"Voir Résultat",
+      formName:"Votre Nom", formEmail:"Adresse Email", formPhone:"Numéro de Téléphone", formMessage:"Votre Message", formSubmit:"Envoyer le message"
+  },
+  ar:{
+      home:"الرئيسية", about:"معلومات عنا", services:"خدماتنا", projects:"مشاريعنا", contact:"اتصل بنا", getQuote:"طلب عرض سعر",
       heroTitle:"بناء رؤيتك", heroDesc:"خدمات البناء والتجديد والعقارات",
       aboutText:"شركة AL-BADR MRNA IMMO هي شركة محترفة في البناء والتجديد والعقارات تقدم مشاريع عالية الجودة بدقة وتقنيات حديثة واحترام كامل للمواعيد.",
+      yearsExp:"سنوات الخبرة", projComp:"مشاريع منجزة", clientSat:"رضاء العملاء",
       serviceConstruction:"البناء", serviceConstructionDesc:"خدمات البناء السكنية والتجارية.",
       serviceRenovation:"التجديد", serviceRenovationDesc:"حلول حديثة للتجديد وإعادة التصميم.",
       serviceFinishing:"التشطيبات", serviceFinishingDesc:"تشطيبات داخلية وخارجية بجودة عالية.",
       serviceElectric:"الكهرباء والسباكة", serviceElectricDesc:"تركيبات احترافية وآمنة.",
-      projectResidential:"مشروع سكني", projectCommercial:"مشروع تجاري", projectRenovation:"مشروع تجديد",
-      formName:"اسمك", formEmail:"البريد الإلكتروني", formPhone:"رقم الهاتف", formMessage:"رسالتك", formSubmit:"إرسال الرسالة"}
+      catRenovation:"تجديد", catFinishing:"تشطيبات", catConstruction:"بناء",
+      proj1Title:"تجديد فيلا فاخرة", proj1Desc:"تحول كامل لفيلا قديمة. قمنا بإزالة الجدران الحاملة لإنشاء مساحة معيشة مفتوحة.",
+      proj2Title:"تشطيب شقة حديثة", proj2Desc:"تشطيب عالي الجودة لشقة بمساحة 120 متر مربع. شملت أرضيات رخامية، أسقف جبسية مخصصة، وإضاءة LED مخفية.",
+      proj3Title:"بناء مكتب تجاري", proj3Desc:"بناء مساحة مكتبية من طابقين محسنة للإنتاجية. قواطع زجاجية عازلة للصوت وتخطيط مريح.",
+      btnBefore:"عرض قبل", btnAfter:"عرض النتيجة",
+      formName:"اسمك", formEmail:"البريد الإلكتروني", formPhone:"رقم الهاتف", formMessage:"رسالتك", formSubmit:"إرسال الرسالة"
+  }
 };
 
 // Elements
@@ -243,6 +346,7 @@ document.querySelectorAll(".langOption").forEach(opt=>{
     const lang = opt.getAttribute("data-lang");
     langButton.textContent = opt.textContent;
     langOptions.style.display="none";
+    document.documentElement.lang = lang; 
     setLanguage(lang);
   });
 });
