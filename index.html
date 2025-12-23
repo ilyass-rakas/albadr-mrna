@@ -7,8 +7,8 @@
     
     <link rel="icon" href="logo.png" type="image/png">
 
-    <meta name="description" content="AL-BADR MRNA IMMO: Expert en construction, rénovation et finition de villas, appartements et bureaux au Maroc (Casablanca, Rabat). Devis gratuit.">
-    <meta name="keywords" content="construction maroc, rénovation casablanca, finition appartement, construction villa, travaux rénovation, aménagement bureau, al-badr mrna immo, architecture maroc">
+    <meta name="description" content="AL-BADR MRNA IMMO: Expert en construction, rénovation et finition de villas, appartements et bureaux au Maroc.">
+    <meta name="keywords" content="construction maroc, rénovation casablanca, finition appartement, construction villa, travaux rénovation, al-badr mrna immo">
     <meta name="author" content="AL-BADR MRNA IMMO">
 
     <meta property="og:title" content="AL-BADR MRNA IMMO | Construction & Rénovation">
@@ -162,6 +162,17 @@
 
 <section id="contact" class="contact">
   <h2 data-key="contact">Contactez-nous</h2>
+  
+  <div class="contact-buttons-container">
+      <a href="tel:+212699215556" class="contact-btn icon-btn" title="Call: +212 699-215556" aria-label="Call Us">
+          <i class="fas fa-phone"></i>
+      </a>
+      
+      <a href="mailto:albadrmrnaimmotravaux@gmail.com" class="contact-btn">
+          <i class="fas fa-envelope"></i> Email
+      </a>
+  </div>
+
   <form id="contactForm" action="https://formspree.io/f/xbdrqpke" method="POST">
     <input type="text" name="name" placeholder="Votre Nom" data-key="formName" required />
     <input type="email" name="email" placeholder="Adresse Email" data-key="formEmail" required />
@@ -180,8 +191,9 @@
 
 <footer>
   <p>© 2025 AL-BADR MRNA IMMO — All Rights Reserved</p>
-  <div class="legal-info">RC: 123456 • ICE: 001234567890000 • PATENTE: 98765432</div>
-  <div class="creator-credit">Created by <span>Ilyass Rakas</span></div>
+  <div class="creator-credit">
+      Built with ❤️ by <a href="https://ilyassrakas-portfolio.vercel.app/" target="_blank">Ilyass Rakas</a>
+  </div>
 </footer>
 
 <a href="https://wa.me/212699215556?text=Bonjour%2C%20je%20voudrais%20un%20devis." class="whatsapp" target="_blank">
@@ -198,22 +210,20 @@
 </div>
 
 <script>
-/* 1. MOBILE MENU TOGGLE */
+/* MOBILE MENU */
 const menuToggle = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
-
-// Close menu when clicking a link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
     });
 });
 
-/* 2. IMAGE TOGGLE LOGIC */
+/* IMAGE TOGGLE */
 let isBefore = false;
 function toggleImage(imgId, beforeSrc, afterSrc, btn) {
     const img = document.getElementById(imgId);
@@ -233,7 +243,7 @@ function toggleImage(imgId, beforeSrc, afterSrc, btn) {
     }
 }
 
-/* 3. TRANSLATIONS DATA */
+/* TRANSLATIONS */
 const translations = {
   en:{
       home:"Home", about:"About Us", services:"Our Services", projects:"Our Projects", contact:"Contact Us", getQuote:"Get a Quote",
@@ -285,7 +295,7 @@ const translations = {
   }
 };
 
-/* 4. LANGUAGE SWITCHER LOGIC */
+/* LANG SWITCHER */
 const langButton = document.getElementById("langButton");
 const langOptions = document.getElementById("langOptions");
 
@@ -314,7 +324,7 @@ function setLanguage(lang){
 }
 setLanguage("fr");
 
-/* 5. SMOOTH SCROLL */
+/* SMOOTH SCROLL */
 document.querySelectorAll("a[href^='#']").forEach(link=>{
   link.addEventListener("click", e=>{
     e.preventDefault();
@@ -323,7 +333,7 @@ document.querySelectorAll("a[href^='#']").forEach(link=>{
   });
 });
 
-/* 6. FORMSPREE LOGIC */
+/* FORM */
 const contactForm=document.getElementById("contactForm");
 contactForm.addEventListener("submit", async function(e){
   e.preventDefault();
