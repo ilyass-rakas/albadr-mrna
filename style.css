@@ -11,7 +11,6 @@
 body {
   background: #0b0b0b;
   color: #ffffff;
-  /* Prevent horizontal scroll on mobile */
   overflow-x: hidden; 
 }
 
@@ -98,7 +97,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 60px; /* Space for navbar */
+  padding-top: 60px;
 }
 
 .hero-content {
@@ -282,7 +281,7 @@ h2 {
 }
 
 /* =========================================
-   CONTACT FORM
+   CONTACT & SOCIAL
    ========================================= */
 .contact { background: #111; }
 form {
@@ -306,6 +305,33 @@ form input, form textarea {
 form input:focus, form textarea:focus { outline: none; border-color: gold; }
 form button { width: 100%; font-size: 1.1rem; padding: 12px; }
 
+/* Instagram Button Styles */
+.contact-social {
+  text-align: center;
+  margin-top: 30px;
+}
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #000;
+  color: gold;
+  border: 1px solid gold;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.social-btn:hover {
+  background: gold;
+  color: #000;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
 /* =========================================
    FOOTER
    ========================================= */
@@ -316,24 +342,35 @@ footer {
   border-top: 1px solid #222;
 }
 footer p { color: #888; margin-bottom: 10px; }
+
 .legal-info { font-size: 0.8rem; color: #555; margin-top: 15px; }
+
+/* Creator Credit Style */
+.creator-credit {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: #444;
+  letter-spacing: 1px;
+}
+.creator-credit span {
+  color: gold;
+  font-weight: bold;
+}
 
 /* =========================================
    RESPONSIVE (PHONES & TABLETS)
    ========================================= */
 @media screen and (max-width: 768px) {
   
-  /* 1. Fix Navbar for Mobile */
+  /* 1. Navbar Mobile */
   .navbar {
     flex-direction: column;
     padding: 15px 20px;
     height: auto;
-    position: relative; /* Unstick from top */
+    position: relative;
   }
   
-  .logo {
-    margin-bottom: 15px;
-  }
+  .logo { margin-bottom: 15px; }
   
   nav {
     display: flex;
@@ -355,26 +392,16 @@ footer p { color: #888; margin-bottom: 10px; }
   /* 2. Hero Adjustments */
   .hero {
     height: auto;
-    min-height: 80vh; /* Adjust height */
+    min-height: 80vh;
     padding-top: 40px;
   }
 
-  .hero h1 {
-    font-size: 32px;
-  }
-  
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero-buttons {
-    flex-direction: column; /* Stack buttons */
-  }
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 16px; }
+  .hero-buttons { flex-direction: column; }
 
   /* 3. General Sections */
-  section {
-    padding: 60px 5%;
-  }
+  section { padding: 60px 5%; }
 
   /* 4. Fix About Stats */
   .about-stats {

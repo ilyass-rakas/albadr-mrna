@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/* Floating Elements Styles (Kept in HTML for easier editing) */
+/* Floating Elements Styles */
 #langWrapper {
   position: fixed;
   bottom: 90px;
@@ -177,7 +177,6 @@
     <div class="project-card">
         <div class="image-wrapper">
             <img src="images/villa-after.png" id="img-1" alt="Villa Renovation">
-            
             <button class="toggle-btn" onclick="toggleImage('img-1', 'images/villa-before.png', 'images/villa-after.png', this)">
                 <span data-key="btnBefore">Show Before</span>
             </button>
@@ -238,12 +237,24 @@
     <textarea name="message" placeholder="Your Message" data-key="formMessage" required></textarea>
     <button type="submit" class="btn" data-key="formSubmit">Send Message</button>
   </form>
+
+  <div class="contact-social">
+    <a href="https://www.instagram.com/societe_aaboubou_immobilier/?hl=fr" target="_blank" class="social-btn">
+      <i class="fab fa-instagram"></i>
+      <span>Follow us on Instagram</span>
+    </a>
+  </div>
 </section>
 
 <footer>
   <p>© 2025 AL-BADR MRNA IMMO — All Rights Reserved</p>
+  
   <div class="legal-info">
       RC: 123456 • ICE: 001234567890000 • PATENTE: 98765432
+  </div>
+
+  <div class="creator-credit">
+      Created by <span>Ilyass Rakas</span>
   </div>
 </footer>
 
