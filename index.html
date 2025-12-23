@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AL-BADR MRNA IMMO | Construction & Renovation</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* Floating Language Selector above WhatsApp */
+#langWrapper {
+  position: fixed;
+  bottom: 90px; /* above WhatsApp */
+  right: 20px;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.langButton {
+  background: #000;
+  color: gold;
+  border-radius: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255,215,0,0.5);
+  transition: 0.3s;
+}
+
+.langButton:hover { transform: scale(1.05); }
+
+.langOptions {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.langOption {
+  background: #000;
+  color: gold;
+  border-radius: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255,215,0,0.5);
+  transition: 0.3s;
+}
+
+.langOption:hover { transform: scale(1.05); }
+
+/* WhatsApp button */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #000;
+  color: gold;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.whatsapp:hover {
+  background: gold;
+  color: #000;
+  transform: scale(1.1);
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="AL-BADR MRNA IMMO Logo">
+    <span>AL-BADR MRNA IMMO</span>
+  </div>
+  <nav>
+    <a href="#home" data-key="home">Home</a>
+    <a href="#about" data-key="about">About</a>
+    <a href="#services" data-key="services">Services</a>
+    <a href="#projects" data-key="projects">Projects</a>
+    <a href="#contact" class="btn" data-key="getQuote">Get a Quote</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1 data-key="heroTitle">Building Your Vision</h1>
+    <p data-key="heroDesc">Construction, Renovation & Real Estate Services</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn" data-key="services">Our Services</a>
+      <a href="#contact" class="btn btn-outline" data-key="getQuote">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2 data-key="about">About Us</h2>
+  <p data-key="aboutText">
+    AL-BADR MRNA IMMO is a professional construction, renovation, and real estate company delivering high-quality projects with precision, modern techniques, and full respect of deadlines.
+  </p>
+  <div class="about-stats">
+    <div>
+      <h3>10+</h3>
+      <span>Years Experience</span>
+    </div>
+    <div>
+      <h3>250+</h3>
+      <span>Projects Completed</span>
+    </div>
+    <div>
+      <h3>100%</h3>
+      <span>Client Satisfaction</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <h2 data-key="services">Our Services</h2>
+  <div class="service-grid">
+    <div class="card">
+      <i class="fas fa-hard-hat"></i>
+      <h3 data-key="serviceConstruction">Construction</h3>
+      <p data-key="serviceConstructionDesc">Residential and commercial building services.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-tools"></i>
+      <h3 data-key="serviceRenovation">Renovation</h3>
+      <p data-key="serviceRenovationDesc">Modern renovation and remodeling solutions.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-paint-roller"></i>
+      <h3 data-key="serviceFinishing">Finishing Works</h3>
+      <p data-key="serviceFinishingDesc">Interior and exterior finishing with premium quality.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-bolt"></i>
+      <h3 data-key="serviceElectric">Electricity & Plumbing</h3>
+      <p data-key="serviceElectricDesc">Professional and safe installations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <h2 data-key="projects">Our Projects</h2>
+  <div class="project-grid">
+    <div class="project" data-key="projectResidential">Residential Project</div>
+    <div class="project" data-key="projectCommercial">Commercial Project</div>
+    <div class="project" data-key="projectRenovation">Renovation Project</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2 data-key="contact">Contact Us</h2>
+  <form id="contactForm" action="https://formspree.io/f/xbdrqpke" method="POST">
+    <input type="text" name="name" placeholder="Your Name" data-key="formName" required />
+    <input type="email" name="email" placeholder="Email Address" data-key="formEmail" required />
+    <input type="tel" name="phone" placeholder="Phone Number" data-key="formPhone" />
+    <textarea name="message" placeholder="Your Message" data-key="formMessage" required></textarea>
+    <button type="submit" class="btn" data-key="formSubmit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 AL-BADR MRNA IMMO — All Rights Reserved</p>
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/212699215556" class="whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Floating Language Selector -->
+<div id="langWrapper">
+  <div class="langOptions" id="langOptions">
+    <div class="langOption" data-lang="en">English</div>
+    <div class="langOption" data-lang="fr">Français</div>
+    <div class="langOption" data-lang="ar">العربية</div>
+  </div>
+  <div class="langButton" id="langButton">English</div>
+</div>
+
+<script>
+// Translations
+const translations = {
+  en:{home:"Home", about:"About Us", services:"Our Services", projects:"Our Projects", contact:"Contact Us", getQuote:"Get a Quote",
+      heroTitle:"Building Your Vision", heroDesc:"Construction, Renovation & Real Estate Services",
+      aboutText:"AL-BADR MRNA IMMO is a professional construction, renovation, and real estate company delivering high-quality projects with precision, modern techniques, and full respect of deadlines.",
+      serviceConstruction:"Construction", serviceConstructionDesc:"Residential and commercial building services.",
+      serviceRenovation:"Renovation", serviceRenovationDesc:"Modern renovation and remodeling solutions.",
+      serviceFinishing:"Finishing Works", serviceFinishingDesc:"Interior and exterior finishing with premium quality.",
+      serviceElectric:"Electricity & Plumbing", serviceElectricDesc:"Professional and safe installations.",
+      projectResidential:"Residential Project", projectCommercial:"Commercial Project", projectRenovation:"Renovation Project",
+      formName:"Your Name", formEmail:"Email Address", formPhone:"Phone Number", formMessage:"Your Message", formSubmit:"Send Message"},
+  fr:{home:"Accueil", about:"À Propos", services:"Nos Services", projects:"Nos Projets", contact:"Contactez-nous", getQuote:"Demander un devis",
+      heroTitle:"Construire Votre Vision", heroDesc:"Services de Construction, Rénovation & Immobilier",
+      aboutText:"AL-BADR MRNA IMMO est une société professionnelle de construction, rénovation et immobilier offrant des projets de haute qualité avec précision, techniques modernes et respect des délais.",
+      serviceConstruction:"Construction", serviceConstructionDesc:"Services de construction résidentielle et commerciale.",
+      serviceRenovation:"Rénovation", serviceRenovationDesc:"Solutions modernes de rénovation et de remodelage.",
+      serviceFinishing:"Finitions", serviceFinishingDesc:"Finitions intérieures et extérieures de qualité premium.",
+      serviceElectric:"Électricité & Plomberie", serviceElectricDesc:"Installations professionnelles et sécurisées.",
+      projectResidential:"Projet Résidentiel", projectCommercial:"Projet Commercial", projectRenovation:"Projet de Rénovation",
+      formName:"Votre Nom", formEmail:"Adresse Email", formPhone:"Numéro de Téléphone", formMessage:"Votre Message", formSubmit:"Envoyer le message"},
+  ar:{home:"الرئيسية", about:"معلومات عنا", services:"خدماتنا", projects:"مشاريعنا", contact:"اتصل بنا", getQuote:"طلب عرض سعر",
+      heroTitle:"بناء رؤيتك", heroDesc:"خدمات البناء والتجديد والعقارات",
+      aboutText:"شركة AL-BADR MRNA IMMO هي شركة محترفة في البناء والتجديد والعقارات تقدم مشاريع عالية الجودة بدقة وتقنيات حديثة واحترام كامل للمواعيد.",
+      serviceConstruction:"البناء", serviceConstructionDesc:"خدمات البناء السكنية والتجارية.",
+      serviceRenovation:"التجديد", serviceRenovationDesc:"حلول حديثة للتجديد وإعادة التصميم.",
+      serviceFinishing:"التشطيبات", serviceFinishingDesc:"تشطيبات داخلية وخارجية بجودة عالية.",
+      serviceElectric:"الكهرباء والسباكة", serviceElectricDesc:"تركيبات احترافية وآمنة.",
+      projectResidential:"مشروع سكني", projectCommercial:"مشروع تجاري", projectRenovation:"مشروع تجديد",
+      formName:"اسمك", formEmail:"البريد الإلكتروني", formPhone:"رقم الهاتف", formMessage:"رسالتك", formSubmit:"إرسال الرسالة"}
+};
+
+// Elements
+const langButton = document.getElementById("langButton");
+const langOptions = document.getElementById("langOptions");
+
+// Toggle options
+langButton.addEventListener("click", ()=>langOptions.style.display = langOptions.style.display==="flex"?"none":"flex");
+
+// Change language
+document.querySelectorAll(".langOption").forEach(opt=>{
+  opt.addEventListener("click", ()=>{
+    const lang = opt.getAttribute("data-lang");
+    langButton.textContent = opt.textContent;
+    langOptions.style.display="none";
+    setLanguage(lang);
+  });
+});
+
+// Apply language
+function setLanguage(lang){
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const key = el.getAttribute("data-key");
+    if(translations[lang][key]){
+      if(el.tagName==="INPUT"||el.tagName==="TEXTAREA") el.placeholder=translations[lang][key];
+      else el.textContent=translations[lang][key];
+    }
+  });
+  if(lang==="ar"){ document.body.dir="rtl"; document.body.style.textAlign="right"; }
+  else{ document.body.dir="ltr"; document.body.style.textAlign="left"; }
+}
+
+// Default English
+setLanguage("en");
+
+// Smooth scroll
+document.querySelectorAll("a[href^='#']").forEach(link=>{
+  link.addEventListener("click", e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute("href")).scrollIntoView({behavior:"smooth"});
+  });
+});
+
+// Formspree submission
+const contactForm=document.getElementById("contactForm");
+contactForm.addEventListener("submit", async function(e){
+  e.preventDefault();
+  const formData=new FormData(contactForm);
+  try{
+    const response=await fetch(contactForm.action,{method:"POST",body:formData,headers:{"Accept":"application/json"}});
+    if(response.ok){ alert("✅ Your message has been sent!"); contactForm.reset(); }
+    else alert("⚠️ Something went wrong.");
+  } catch { alert("⚠️ Submission error."); }
+});
+</script>
+
+</body>
+</html>
