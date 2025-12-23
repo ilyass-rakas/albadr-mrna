@@ -1,478 +1,329 @@
 /* =========================================
-   GLOBAL STYLES
+   1. GLOBAL STYLES
    ========================================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-  background: #0b0b0b;
-  color: #ffffff;
-  overflow-x: hidden; 
+    background: #0b0b0b;
+    color: #ffffff;
+    overflow-x: hidden; 
 }
 
 /* =========================================
-   NAVBAR (DESKTOP)
+   2. NAVBAR (DESKTOP)
    ========================================= */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 10px 40px; 
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  border-bottom: 1px solid #333;
-  height: 120px; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 40px; 
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+    height: 100px; 
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: gold;
-  font-size: 26px; 
-  font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: gold;
+    font-size: 22px; 
+    font-weight: bold;
 }
 
 .logo img {
-  height: 90px; 
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    height: 60px; 
+    width: auto;
+    object-fit: contain;
 }
 
-nav {
-  display: flex;
-  align-items: center;
+/* Navigation Links Container */
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
-nav a {
-  margin-left: 20px;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 1.05rem;
+.nav-links a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.05rem;
+    cursor: pointer;
 }
 
-nav a:hover {
-  color: gold;
+.nav-links a:hover {
+    color: gold;
 }
 
+/* Hamburger Menu Icon (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+}
+
+/* Buttons */
 .btn {
-  background: gold;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
+    background: gold;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
 }
 
-.btn:hover {
-  background: #ffec8b;
-}
+.btn:hover { background: #ffec8b; }
 
 .btn-outline {
-  background: transparent;
-  border: 1px solid gold;
-  color: gold;
+    background: transparent;
+    border: 1px solid gold;
+    color: gold;
 }
 
-.btn-outline:hover {
-  background: gold;
-  color: black;
-}
+.btn-outline:hover { background: gold; color: black; }
 
 /* =========================================
-   HERO SECTION
+   3. HERO SECTION
    ========================================= */
 .hero {
-  height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
-    center / cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: 0; 
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
+        center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px; 
 }
 
 .hero-content {
-  max-width: 900px;
-  padding: 20px;
-  /* DESKTOP POSITIONING */
-  margin-top: 100px; 
+    max-width: 900px;
+    padding: 20px;
 }
 
-/* BIG CENTRAL LOGO STYLE */
+/* Central Logo Style */
 .hero-logo {
-  display: block;
-  /* DESKTOP: Negative margin to fix transparent space */
-  margin: 0 auto -50px auto; 
-  height: 250px; 
-  width: auto;
-  position: relative;
-  z-index: 2; 
-  filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)); 
+    display: block;
+    margin: 0 auto 20px auto; 
+    height: 200px; 
+    width: auto;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)); 
 }
 
 .hero h1 {
-  font-size: 50px;
-  color: gold;
-  margin-top: 0; 
-  line-height: 1.1; 
-  margin-bottom: 15px;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.8);
-  position: relative;
-  z-index: 1;
+    font-size: 48px;
+    color: gold;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
 }
 
 .hero p {
-  margin: 20px 0 30px 0;
-  font-size: 22px;
-  color: #ddd;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    margin: 20px 0 30px 0;
+    font-size: 22px;
+    color: #ddd;
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
 
 /* =========================================
-   SECTIONS GENERAL
+   4. SECTIONS & CARDS
    ========================================= */
-section {
-  padding: 80px 10%;
-}
+section { padding: 80px 10%; }
 
 h2 {
-  color: gold;
-  margin-bottom: 40px;
-  font-size: 32px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* =========================================
-   ABOUT
-   ========================================= */
-.about { text-align: center; }
-.about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #ccc;
-    max-width: 800px;
-    margin: 0 auto;
-}
-.about-stats {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 50px;
-  flex-wrap: wrap;
-}
-.about-stats div h3 {
-    font-size: 2.5rem;
     color: gold;
-    margin-bottom: 5px;
-}
-.about-stats div span {
-    color: #888;
+    margin-bottom: 40px;
+    font-size: 32px;
+    text-align: center;
     text-transform: uppercase;
-    font-size: 0.9rem;
     letter-spacing: 1px;
 }
 
-/* =========================================
-   SERVICES
-   ========================================= */
+/* About Stats */
+.about { text-align: center; }
+.about p { font-size: 1.1rem; line-height: 1.6; color: #ccc; max-width: 800px; margin: 0 auto; }
+
+.about-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.about-stats div h3 { font-size: 2.5rem; color: gold; margin-bottom: 5px; }
+.about-stats div span { color: #888; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+
+/* Services Grid */
 .service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .card {
-  background: #1a1a1a;
-  padding: 40px 30px;
-  border-radius: 10px;
-  transition: 0.3s;
-  text-align: center;
-  border: 1px solid #333;
+    background: #1a1a1a;
+    padding: 40px 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-align: center;
+    border: 1px solid #333;
 }
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: gold;
-  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1);
-}
-
-.card i {
-  font-size: 40px;
-  color: gold;
-  margin-bottom: 20px;
-}
-
+.card:hover { transform: translateY(-5px); border-color: gold; }
+.card i { font-size: 40px; color: gold; margin-bottom: 20px; }
 .card h3 { margin-bottom: 15px; color: #fff; }
 .card p { color: #aaa; line-height: 1.5; }
 
-/* =========================================
-   PROJECTS
-   ========================================= */
-.projects { background-color: #0b0b0b; }
+/* Projects Grid */
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 30px;
 }
 .project-card {
     background: #1a1a1a;
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid #333;
-    transition: 0.3s;
 }
-.project-card:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-color: #444;
-}
-.image-wrapper {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-}
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-.project-card:hover .image-wrapper img { transform: scale(1.05); }
+.image-wrapper { position: relative; height: 250px; overflow: hidden; }
+.image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
 .category-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: gold;
-    color: black;
-    padding: 5px 12px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 20px;
-    text-transform: uppercase;
+    position: absolute; top: 15px; left: 15px;
+    background: gold; color: black; padding: 5px 12px;
+    font-size: 0.8rem; font-weight: bold; border-radius: 20px;
 }
 .toggle-btn {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    border: 1px solid gold;
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: 0.3s;
+    position: absolute; bottom: 15px; right: 15px;
+    background: rgba(0,0,0,0.8); color: white; border: 1px solid gold;
+    padding: 6px 15px; border-radius: 20px; cursor: pointer;
 }
-.toggle-btn:hover { background: gold; color: black; }
 .project-content { padding: 25px; }
-.project-location {
-    font-size: 0.85rem;
-    color: #888;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 10px;
-}
-.project-content h3 { font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
-.project-content p { font-size: 0.95rem; color: #bbb; line-height: 1.5; margin-bottom: 20px; }
-.tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag {
-    background: #2a2a2a;
-    color: #888;
-    padding: 4px 10px;
-    border-radius: 5px;
-    font-size: 0.75rem;
-}
+.project-location { color: #888; margin-bottom: 10px; font-size: 0.9rem;}
+.project-content h3 { margin-bottom: 10px; font-size: 1.3rem; }
+.project-content p { color: #bbb; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px;}
+.tags .tag { background: #333; color: #aaa; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px;}
 
-/* =========================================
-   CONTACT & SOCIAL
-   ========================================= */
+/* Contact Form */
 .contact { background: #111; }
-form {
-  max-width: 600px;
-  margin: auto;
-  background: #000;
-  padding: 40px;
-  border-radius: 15px;
-  border: 1px solid #333;
-}
+form { max-width: 600px; margin: auto; background: #000; padding: 40px; border-radius: 15px; border: 1px solid #333; }
 form input, form textarea {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 15px;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  color: white;
-  border-radius: 5px;
-  font-size: 1rem;
+    width: 100%; margin-bottom: 20px; padding: 15px;
+    background: #1a1a1a; border: 1px solid #333; color: white; border-radius: 5px;
 }
-form input:focus, form textarea:focus { outline: none; border-color: gold; }
-form button { width: 100%; font-size: 1.1rem; padding: 12px; }
-
-/* Instagram Button Styles */
-.contact-social {
-  text-align: center;
-  margin-top: 30px;
-}
+form button { width: 100%; padding: 12px; font-size: 1.1rem; }
+.contact-social { text-align: center; margin-top: 30px; }
 .social-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #000;
-  color: gold;
-  border: 1px solid gold;
-  padding: 12px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-.social-btn:hover {
-  background: gold;
-  color: #000;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #000; color: gold; border: 1px solid gold;
+    padding: 12px 30px; border-radius: 30px; text-decoration: none;
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
-footer {
-  background: #000;
-  padding: 40px 20px;
-  text-align: center;
-  border-top: 1px solid #222;
-}
+/* Footer */
+footer { background: #000; padding: 40px 20px; text-align: center; border-top: 1px solid #222; }
 footer p { color: #888; margin-bottom: 10px; }
-
-.legal-info { font-size: 0.8rem; color: #555; margin-top: 15px; }
-
-.creator-credit {
-  margin-top: 15px;
-  font-size: 0.75rem;
-  color: #444;
-  letter-spacing: 1px;
-}
-.creator-credit span {
-  color: gold;
-  font-weight: bold;
-}
+.legal-info, .creator-credit { font-size: 0.8rem; color: #555; margin-top: 10px; }
 
 /* =========================================
-   TABLET ADAPTATION (iPad, etc.)
+   5. FLOATING ELEMENTS (LANG & WHATSAPP)
    ========================================= */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  
-  .navbar {
-    padding: 10px 20px;
-    height: 100px;
-  }
-  
-  .logo img { height: 70px; }
-  .logo { font-size: 22px; }
-
-  /* Slightly smaller hero logo for tablets */
-  .hero-logo {
-    height: 200px;
-    /* Adjust negative margin because logo is smaller */
-    margin-bottom: -40px; 
-  }
-
-  .hero h1 { font-size: 42px; }
+#langWrapper {
+    position: fixed; bottom: 90px; right: 20px; z-index: 1002;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
 }
+.langButton {
+    background: #000; color: gold; border-radius: 30px; padding: 10px 15px;
+    cursor: pointer; font-weight: bold; border: 1px solid gold;
+    box-shadow: 0 0 10px rgba(255,215,0,0.3); transition: 0.3s;
+}
+.langButton:hover { transform: scale(1.05); background: gold; color: black; }
+.langOptions {
+    display: none; flex-direction: column; gap: 10px; margin-bottom: 10px;
+}
+.langOption {
+    background: #111; color: white; border: 1px solid #333; border-radius: 30px;
+    padding: 8px 15px; cursor: pointer; font-size: 0.9rem; transition: 0.3s;
+}
+.langOption:hover { border-color: gold; color: gold; }
+
+.whatsapp {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #000; color: gold; border: 2px solid gold;
+    width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease; z-index: 999;
+}
+.whatsapp:hover { transform: scale(1.1); background: gold; color: black; }
 
 /* =========================================
-   MOBILE ADAPTATION (Phones)
+   6. RESPONSIVE MOBILE & TABLET
    ========================================= */
 @media screen and (max-width: 768px) {
-  
-  /* 1. Navbar Mobile */
-  .navbar {
-    flex-direction: column;
-    padding: 15px 20px;
-    height: auto;
-    /* Position relative allows user to scroll past menu easily on small screens */
-    position: relative; 
-  }
-  
-  .logo { margin-bottom: 15px; font-size: 22px; }
+    
+    /* Navbar Mobile */
+    .navbar {
+        flex-direction: row; justify-content: space-between;
+        padding: 15px 20px; height: 80px; background: #000;
+    }
+    .logo { font-size: 18px; }
+    .logo img { height: 50px; }
 
-  .logo img {
-      height: 75px; 
-  }
-  
-  nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    text-align: center;
-  }
+    /* Hamburger Menu Button */
+    .menu-toggle {
+        display: flex; flex-direction: column; justify-content: space-between;
+        width: 30px; height: 21px; cursor: pointer; z-index: 1001;
+    }
+    .menu-toggle span {
+        display: block; height: 3px; width: 100%;
+        background: gold; border-radius: 3px; transition: 0.3s;
+    }
 
-  nav a {
-    margin-left: 0;
-    display: block;
-    padding: 12px;
-    background: #1a1a1a;
-    border-radius: 5px;
-    border: 1px solid #333;
-  }
+    /* Mobile Dropdown Menu */
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute; top: 80px; left: 0; width: 100%;
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column; align-items: center;
+        padding: 20px 0; border-bottom: 1px solid #333; gap: 20px;
+    }
+    .nav-links.active {
+        display: flex; animation: slideDown 0.3s ease forwards;
+    }
+    .nav-links a {
+        margin-left: 0; width: 80%; text-align: center;
+        padding: 15px; background: #111; border: 1px solid #333; border-radius: 8px;
+    }
 
-  /* 2. Hero Adjustments */
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    padding-top: 40px; 
-  }
-  
-  .hero-content {
-      padding: 40px 20px;
-      margin-top: 40px; 
-  }
-  
-  /* Mobile Central Logo */
-  .hero-logo {
-      height: 160px; /* Smaller for phone screens */
-      /* Adjusted negative margin for smaller logo */
-      margin-bottom: -30px; 
-  }
+    /* Adjust Hero for Mobile */
+    .hero h1 { font-size: 32px; }
+    .hero-buttons { flex-direction: column; }
+    
+    /* Adjust Floating Buttons */
+    .whatsapp { width: 50px; height: 50px; font-size: 24px; bottom: 15px; right: 15px; }
+    #langWrapper { bottom: 75px; right: 15px; }
+}
 
-  .hero h1 { font-size: 32px; }
-  .hero p { font-size: 16px; }
-  .hero-buttons { flex-direction: column; }
-
-  /* 3. General Sections */
-  section { padding: 60px 5%; }
-
-  /* 4. Fix About Stats */
-  .about-stats {
-    gap: 30px;
-    flex-direction: column;
-  }
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
