@@ -173,7 +173,7 @@ footer p { color: #888; margin-bottom: 10px; }
     .hero h1 { font-size: 32px; }
     .hero-buttons { flex-direction: column; }
     
-    h2 { font-size: 26px; margin-bottom: 25px; } /* Fix for big "Contactez-nous" */
+    h2 { font-size: 26px; margin-bottom: 25px; }
 
     /* FIX FOR BUTTONS: Force them to stay in a row and center them */
     .contact-buttons-container { 
@@ -187,3 +187,24 @@ footer p { color: #888; margin-bottom: 10px; }
     #langWrapper { bottom: 75px; right: 15px; }
 }
 @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* =========================================
+   7. SCROLL ANIMATIONS (New Addition)
+   ========================================= */
+.hidden-el {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.show-el {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Staggered Delay for grid items */
+.card:nth-child(2), .project-card:nth-child(2) { transition-delay: 150ms; }
+.card:nth-child(3), .project-card:nth-child(3) { transition-delay: 300ms; }
+.card:nth-child(4) { transition-delay: 450ms; }

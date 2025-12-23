@@ -344,6 +344,22 @@ contactForm.addEventListener("submit", async function(e){
     else alert("⚠️ Une erreur s'est produite.");
   } catch { alert("⚠️ Erreur d'envoi."); }
 });
+
+/* =========================================
+   SCROLL ANIMATIONS OBSERVER (New Addition)
+   ========================================= */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-el');
+        } 
+    });
+});
+
+// Select sections and cards to animate
+const hiddenElements = document.querySelectorAll('section, .card, .project-card, .about-stats div');
+hiddenElements.forEach((el) => el.classList.add('hidden-el'));
+hiddenElements.forEach((el) => observer.observe(el));
 </script>
 </body>
 </html>
