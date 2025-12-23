@@ -4,41 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AL-BADR MRNA IMMO | Construction & Rénovation</title>
-    
     <link rel="icon" href="logo.png" type="image/png">
-
-    <meta name="description" content="AL-BADR MRNA IMMO: Expert en construction, rénovation et finition de villas, appartements et bureaux au Maroc.">
-    <meta name="keywords" content="construction maroc, rénovation casablanca, finition appartement, construction villa, travaux rénovation, al-badr mrna immo">
-    <meta name="author" content="AL-BADR MRNA IMMO">
-
-    <meta property="og:title" content="AL-BADR MRNA IMMO | Construction & Rénovation">
-    <meta property="og:description" content="Transformez votre espace avec nos services de construction et rénovation de haute qualité au Maroc.">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://albadr-mrna.vercel.app/">
-
+    <meta name="description" content="AL-BADR MRNA IMMO: Expert en construction, rénovation et finition.">
     <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+<div id="preloader"><img src="logo.png" alt="Loading..." class="loader-logo"></div>
+<div class="scroll-progress"></div>
 
 <header class="navbar">
     <div class="logo">
         <img src="logo.png" alt="AL-BADR" onerror="this.style.display='none'">
         <span>AL-BADR MRNA IMMO</span>
     </div>
-    
-    <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
+    <div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
     <nav class="nav-links">
         <a href="#home" data-key="home">Accueil</a>
         <a href="#about" data-key="about">À Propos</a>
         <a href="#services" data-key="services">Services</a>
         <a href="#projects" data-key="projects">Projets</a>
+        <a href="#faq" data-key="faqMenu">FAQ</a>
         <a href="#contact" class="btn" data-key="getQuote">Demander un devis</a>
     </nav>
 </header>
@@ -57,149 +44,170 @@
 
 <section id="about" class="about">
   <h2 data-key="about">À Propos</h2>
-  <p data-key="aboutText">
-    AL-BADR MRNA IMMO est une société professionnelle de construction, rénovation et immobilier offrant des projets de haute qualité avec précision, techniques modernes et respect des délais.
-  </p>
+  <p data-key="aboutText">AL-BADR MRNA IMMO est une société professionnelle spécialisée dans la construction, la rénovation et les travaux de finition. Nous transformons vos rêves en réalité avec une précision experte et des matériaux de qualité.</p>
   <div class="about-stats">
-    <div>
-      <h3>10+</h3>
-      <span data-key="yearsExp">Années d'Expérience</span>
-    </div>
-    <div>
-      <h3>250+</h3>
-      <span data-key="projComp">Projets Réalisés</span>
-    </div>
-    <div>
-      <h3>100%</h3>
-      <span data-key="clientSat">Satisfaction Client</span>
-    </div>
+    <div><h3 data-target="10">0+</h3><span data-key="yearsExp">Années d'Expérience</span></div>
+    <div><h3 data-target="250">0+</h3><span data-key="projComp">Projets Réalisés</span></div>
+    <div><h3 data-target="100">0%</h3><span data-key="clientSat">Satisfaction Client</span></div>
   </div>
 </section>
 
 <section id="services" class="services">
   <h2 data-key="services">Nos Services</h2>
   <div class="service-grid">
-    <div class="card">
-      <i class="fas fa-hard-hat"></i>
-      <h3 data-key="serviceConstruction">Construction</h3>
-      <p data-key="serviceConstructionDesc">Services de construction résidentielle et commerciale.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-tools"></i>
-      <h3 data-key="serviceRenovation">Rénovation</h3>
-      <p data-key="serviceRenovationDesc">Solutions modernes de rénovation et de remodelage.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-paint-roller"></i>
-      <h3 data-key="serviceFinishing">Finitions</h3>
-      <p data-key="serviceFinishingDesc">Finitions intérieures et extérieures de qualité premium.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-bolt"></i>
-      <h3 data-key="serviceElectric">Électricité & Plomberie</h3>
-      <p data-key="serviceElectricDesc">Installations professionnelles et sécurisées.</p>
-    </div>
+    <div class="card"><i class="fas fa-hard-hat"></i><h3 data-key="serviceConstruction">Construction</h3><p data-key="serviceConstructionDesc">Services de construction résidentielle et commerciale.</p></div>
+    <div class="card"><i class="fas fa-tools"></i><h3 data-key="serviceRenovation">Rénovation</h3><p data-key="serviceRenovationDesc">Solutions modernes de rénovation.</p></div>
+    <div class="card"><i class="fas fa-paint-roller"></i><h3 data-key="serviceFinishing">Finitions</h3><p data-key="serviceFinishingDesc">Finitions intérieures et extérieures.</p></div>
+    <div class="card"><i class="fas fa-bolt"></i><h3 data-key="serviceElectric">Électricité</h3><p data-key="serviceElectricDesc">Installations professionnelles.</p></div>
   </div>
 </section>
 
 <section id="projects" class="projects">
   <h2 data-key="projects">Nos Projets</h2>
   <div class="project-grid">
-    
     <div class="project-card">
         <div class="image-wrapper">
-            <img src="images/villa-after.png" id="img-1" alt="Villa Renovation">
-            <button class="toggle-btn" onclick="toggleImage('img-1', 'images/villa-before.png', 'images/villa-after.png', this)">
-                <span data-key="btnBefore">Voir Avant</span>
-            </button>
+            <img src="images/villa-after.png" id="img-1" alt="Villa">
+            <button class="toggle-btn" onclick="toggleImage('img-1', 'images/villa-before.png', 'images/villa-after.png', this)"><span data-key="btnBefore">Voir Avant</span></button>
             <span class="category-badge" data-key="catRenovation">Rénovation</span>
         </div>
         <div class="project-content">
-            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Bouskoura, Casablanca</div>
+            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Bouskoura</div>
             <h3 data-key="proj1Title">Rénovation Villa de Luxe</h3>
-            <p data-key="proj1Desc">Transformation complète d'une villa ancienne. Suppression des murs porteurs pour créer un espace ouvert.</p>
-            <div class="tags">
-                <span class="tag">#Structural</span>
-                <span class="tag">#SmartHome</span>
-            </div>
+            <p data-key="proj1Desc">Rénovation complète d'une villa à Bouskoura. Modernisation de la façade, réaménagement intérieur et piscine.</p>
         </div>
     </div>
-
     <div class="project-card">
         <div class="image-wrapper">
-            <img src="images/apt-finish.png" alt="Apartment Finishing">
+            <img src="images/apt-finish.png" alt="Apartment">
             <span class="category-badge" data-key="catFinishing">Finitions</span>
         </div>
         <div class="project-content">
-            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Maarif, Casablanca</div>
-            <h3 data-key="proj2Title">Finition Appartement Moderne</h3>
-            <p data-key="proj2Desc">Finition haut de gamme pour un appartement de 120m². Sol en marbre, plafonds en gypse personnalisés et éclairage LED.</p>
-            <div class="tags">
-                <span class="tag">#Marble</span>
-                <span class="tag">#Lighting</span>
-            </div>
+            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Maarif</div>
+            <h3 data-key="proj2Title">Finition Appartement</h3>
+            <p data-key="proj2Desc">Finition haut de gamme pour un appartement de 120m² au quartier Maarif. Peinture, carrelage et menuiserie sur mesure.</p>
         </div>
     </div>
-
     <div class="project-card">
         <div class="image-wrapper">
-            <img src="images/office-main.png" alt="Office Build">
+            <img src="images/office-main.png" alt="Office">
             <span class="category-badge" data-key="catConstruction">Construction</span>
         </div>
         <div class="project-content">
-            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Agdal, Rabat</div>
-            <h3 data-key="proj3Title">Construction Bureau Commercial</h3>
-            <p data-key="proj3Desc">Construction d'un espace de bureau sur 2 étages. Cloisons en verre insonorisées et aménagement ergonomique.</p>
-            <div class="tags">
-                <span class="tag">#Office</span>
-                <span class="tag">#GlassWork</span>
+            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Agdal</div>
+            <h3 data-key="proj3Title">Bureau Commercial</h3>
+            <p data-key="proj3Desc">Construction d'un espace de bureau commercial sur 2 niveaux à Agdal. Structure en béton armé et aménagements modernes.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+  <h2 data-key="testimonialsTitle">Ce que disent nos clients</h2>
+  <div class="testimonial-grid">
+    <div class="testi-card">
+        <i class="fas fa-quote-left testi-icon"></i>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text" data-key="review1">"Nous avons confié la rénovation de notre villa à AL-BADR. Le résultat dépasse nos attentes. Équipe très professionnelle et respectueuse des délais."</p>
+        <span class="client-name">Ahmed B.</span>
+    </div>
+    <div class="testi-card">
+        <i class="fas fa-quote-left testi-icon"></i>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text" data-key="review2">"Qualité de finition irréprochable pour mon appartement. Ils ont su transformer l'espace avec goût. Je recommande vivement leurs services."</p>
+        <span class="client-name">Sarah K.</span>
+    </div>
+    <div class="testi-card">
+        <i class="fas fa-quote-left testi-icon"></i>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <p class="testi-text" data-key="review3">"Un partenaire fiable pour nos projets de construction. Réactivité et professionnalisme sont les maîtres mots de cette entreprise."</p>
+        <span class="client-name">Omar T.</span>
+    </div>
+  </div>
+  <div class="review-action">
+      <button class="btn-review" onclick="openReviewModal()" data-key="btnLeaveReview">Donner votre avis</button>
+  </div>
+</section>
+
+<section id="faq" class="faq-section">
+    <h2 data-key="faqTitle">Questions Fréquentes</h2>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <span data-key="faqQ1">Le devis est-il gratuit ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p data-key="faqA1">Oui, absolument. Nous offrons une première consultation et une estimation gratuite pour tous les projets de construction et de rénovation.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <span data-key="faqQ3">Quelle est la durée moyenne d'un projet ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p data-key="faqA3">Cela dépend de la taille du projet. Une rénovation d'appartement prend généralement entre 3 et 6 semaines, tandis que la construction d'une villa peut prendre plusieurs mois.</p>
+            </div>
+        </div>
+         <div class="accordion-item">
+            <div class="accordion-header">
+                <span data-key="faqQ4">Avez-vous une garantie ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+                <p data-key="faqA4">Oui, tous nos travaux de gros œuvre sont couverts par une garantie professionnelle, assurant la tranquillité d'esprit de nos clients.</p>
             </div>
         </div>
     </div>
-
-  </div>
 </section>
 
 <section id="contact" class="contact">
   <h2 data-key="contact">Contactez-nous</h2>
-  
-  <div class="contact-buttons-container">
-      <a href="tel:+212699215556" class="contact-btn icon-btn" title="Call: +212 699-215556" aria-label="Call Us">
-          <i class="fas fa-phone"></i>
-      </a>
-      
-      <a href="mailto:albadrmrnaimmotravaux@gmail.com" class="contact-btn">
-          <i class="fas fa-envelope"></i> Email
-      </a>
-  </div>
-
-  <form id="contactForm" action="https://formspree.io/f/xbdrqpke" method="POST">
-    <input type="text" name="name" placeholder="Votre Nom" data-key="formName" required />
-    <input type="email" name="email" placeholder="Adresse Email" data-key="formEmail" required />
-    <input type="tel" name="phone" placeholder="Numéro de Téléphone" data-key="formPhone" />
-    <textarea name="message" placeholder="Votre Message" data-key="formMessage" required></textarea>
-    <button type="submit" class="btn" data-key="formSubmit">Envoyer le message</button>
-  </form>
-
-  <div class="contact-social">
-    <a href="https://www.instagram.com/societe_aaboubou_immobilier/?hl=fr" target="_blank" class="social-btn">
-      <i class="fab fa-instagram"></i>
-      <span>Suivez-nous sur Instagram</span>
-    </a>
-  </div>
+  <div class="contact-container">
+      <div class="contact-buttons-container">
+          <a href="tel:+212699215556" class="contact-btn icon-btn"><i class="fas fa-phone"></i></a>
+          <a href="mailto:albadrmrnaimmotravaux@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xbdrqpke" method="POST">
+        <input type="text" name="name" placeholder="Votre Nom" data-key="formName" required />
+        <input type="email" name="email" placeholder="Adresse Email" data-key="formEmail" required />
+        <input type="tel" name="phone" placeholder="Numéro de Téléphone" data-key="formPhone" />
+        <textarea name="message" placeholder="Votre Message" data-key="formMessage" required></textarea>
+        <button type="submit" class="btn" data-key="formSubmit">Envoyer le message</button>
+      </form>
+      <div class="contact-social">
+        <a href="https://www.instagram.com/societe_aaboubou_immobilier/?hl=fr" target="_blank" class="social-btn">
+          <i class="fab fa-instagram"></i><span>Suivez-nous sur Instagram</span>
+        </a>
+      </div>
+      </div>
 </section>
 
 <footer>
   <p>© 2025 AL-BADR MRNA IMMO — All Rights Reserved</p>
-  <div class="creator-credit">
-      Built with ❤️ by <a href="https://ilyassrakas-portfolio.vercel.app/" target="_blank">Ilyass Rakas</a>
-  </div>
+  <div class="creator-credit">Built with ❤️ by <a href="https://ilyassrakas-portfolio.vercel.app/" target="_blank">Ilyass Rakas</a></div>
 </footer>
 
-<a href="https://wa.me/212699215556?text=Bonjour%2C%20je%20voudrais%20un%20devis." class="whatsapp" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+<div class="modal-overlay" id="reviewModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeReviewModal()">×</span>
+        <h2 data-key="modalTitle">Votre Avis Compte</h2>
+        <form id="reviewForm" action="https://formspree.io/f/xbdrqpke" method="POST">
+            <input type="hidden" name="rating" id="ratingValue" value="5">
+            <div class="star-input">
+                <i class="fas fa-star active" data-value="1"></i><i class="fas fa-star active" data-value="2"></i>
+                <i class="fas fa-star active" data-value="3"></i><i class="fas fa-star active" data-value="4"></i>
+                <i class="fas fa-star active" data-value="5"></i>
+            </div>
+            <input type="text" name="name" placeholder="Votre Nom" data-key="formName" required />
+            <textarea name="review" placeholder="Votre expérience..." data-key="modalPlaceholder" required style="height:100px;"></textarea>
+            <button type="submit" class="btn" data-key="formSubmit">Envoyer l'avis</button>
+        </form>
+    </div>
+</div>
 
+<a href="https://wa.me/212699215556" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <div id="langWrapper">
   <div class="langOptions" id="langOptions">
     <div class="langOption" data-lang="en">English</div>
@@ -211,155 +219,164 @@
 
 <script>
 /* MOBILE MENU */
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+const menuToggle=document.getElementById('mobile-menu'), navLinks=document.querySelector('.nav-links');
+menuToggle.addEventListener('click', ()=>{navLinks.classList.toggle('active')});
+document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click', ()=>{navLinks.classList.remove('active')})});
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+/* IMAGE TOGGLE */
+let isBefore=false;
+function toggleImage(id,b,a,btn){
+    const img=document.getElementById(id), span=btn.querySelector('span'), cur=document.documentElement.lang||'fr';
+    if(!isBefore){img.src=b;span.textContent=translations[cur].btnAfter;isBefore=true;}
+    else{img.src=a;span.textContent=translations[cur].btnBefore;isBefore=false;}
+}
+
+/* FAQ ACCORDION LOGIC */
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const body = header.nextElementSibling;
+        const icon = header.querySelector('i');
+        header.classList.toggle('active');
+        if (header.classList.contains('active')) { body.style.maxHeight = body.scrollHeight + "px"; } 
+        else { body.style.maxHeight = 0; }
+        document.querySelectorAll('.accordion-header').forEach(otherHeader => {
+            if (otherHeader !== header && otherHeader.classList.contains('active')) {
+                otherHeader.classList.remove('active');
+                otherHeader.nextElementSibling.style.maxHeight = 0;
+            }
+        });
     });
 });
 
-/* IMAGE TOGGLE */
-let isBefore = false;
-function toggleImage(imgId, beforeSrc, afterSrc, btn) {
-    const img = document.getElementById(imgId);
-    const span = btn.querySelector('span');
-    const currentLang = document.documentElement.lang || 'fr'; 
-    const txtBefore = translations[currentLang].btnBefore;
-    const txtAfter = translations[currentLang].btnAfter;
-
-    if (!isBefore) {
-        img.src = beforeSrc;
-        span.textContent = txtAfter;
-        isBefore = true;
-    } else {
-        img.src = afterSrc;
-        span.textContent = txtBefore;
-        isBefore = false;
-    }
-}
+/* REVIEW MODAL */
+const reviewModal=document.getElementById('reviewModal'), stars=document.querySelectorAll('.star-input i'), ratingVal=document.getElementById('ratingValue');
+function openReviewModal(){reviewModal.classList.add('active')}
+function closeReviewModal(){reviewModal.classList.remove('active')}
+reviewModal.addEventListener('click', e=>{if(e.target===reviewModal)closeReviewModal()});
+stars.forEach(s=>{s.addEventListener('click',()=>{
+    const v=parseInt(s.getAttribute('data-value'));ratingVal.value=v;
+    stars.forEach(st=>{st.classList.toggle('active',parseInt(st.getAttribute('data-value'))<=v)})
+})});
 
 /* TRANSLATIONS */
 const translations = {
   en:{
-      home:"Home", about:"About Us", services:"Our Services", projects:"Our Projects", contact:"Contact Us", getQuote:"Get a Quote",
+      home:"Home", about:"About Us", services:"Services", projects:"Projects", contact:"Contact", getQuote:"Get a Quote", faqMenu: "FAQ",
       heroTitle:"Building Your Vision", heroDesc:"Construction, Renovation & Real Estate Services",
-      aboutText:"AL-BADR MRNA IMMO is a professional construction, renovation, and real estate company delivering high-quality projects with precision, modern techniques, and full respect of deadlines.",
+      aboutText:"AL-BADR MRNA IMMO is a professional company specializing in construction, renovation, and finishing works. We turn your dreams into reality with expert precision and quality materials.",
       yearsExp:"Years Experience", projComp:"Projects Completed", clientSat:"Client Satisfaction",
-      serviceConstruction:"Construction", serviceConstructionDesc:"Residential and commercial building services.",
-      serviceRenovation:"Renovation", serviceRenovationDesc:"Modern renovation and remodeling solutions.",
-      serviceFinishing:"Finishing Works", serviceFinishingDesc:"Interior and exterior finishing with premium quality.",
-      serviceElectric:"Electricity & Plumbing", serviceElectricDesc:"Professional and safe installations.",
+      serviceConstruction:"Construction", serviceConstructionDesc:"Residential and commercial building.",
+      serviceRenovation:"Renovation", serviceRenovationDesc:"Modern renovation solutions.",
+      serviceFinishing:"Finishing", serviceFinishingDesc:"Interior and exterior finishing.",
+      serviceElectric:"Electricity", serviceElectricDesc:"Professional installations.",
       catRenovation:"Renovation", catFinishing:"Finishing", catConstruction:"Construction",
-      proj1Title:"Luxury Villa Renovation", proj1Desc:"Complete transformation of an old villa. We removed load-bearing walls to create an open-plan living space.",
-      proj2Title:"Modern Apartment Finishing", proj2Desc:"High-end finishing for a 120m² apartment. Included marble flooring, custom gypsum ceilings, and concealed LED lighting.",
-      proj3Title:"Commercial Office Build", proj3Desc:"Construction of a 2-story office space optimized for productivity. Soundproof glass partitions and ergonomic layout.",
+      proj1Title:"Luxury Villa", proj1Desc:"Complete renovation of a villa in Bouskoura. Facade modernization, interior redesign, and swimming pool.",
+      proj2Title:"Apartment Finishing", proj2Desc:"High-end finishing for a 120m² apartment in Maarif district. Painting, tiling, and custom carpentry.",
+      proj3Title:"Office Build", proj3Desc:"Construction of a commercial office space on 2 levels in Agdal. Reinforced concrete structure and modern amenities.",
       btnBefore:"Show Before", btnAfter:"Show Result",
-      formName:"Your Name", formEmail:"Email Address", formPhone:"Phone Number", formMessage:"Your Message", formSubmit:"Send Message"
+      testimonialsTitle: "What Our Clients Say", btnLeaveReview: "Leave a Review",
+      modalTitle: "Your Feedback", modalPlaceholder: "Describe your experience...",
+      formName:"Your Name", formEmail:"Email", formPhone:"Phone", formMessage:"Message", formSubmit:"Send Message",
+      review1:"\"I renovated my villa with AL-BADR and I am delighted. Adherence to deadlines and quality of materials are top-notch. A trustworthy team.\"",
+      review2:"\"Excellent finishing work on my apartment. The attention to detail makes all the difference. I highly recommend their services.\"",
+      review3:"\"A reliable partner for our construction projects. Responsiveness and professionalism are the keywords of this company.\"",
+      // FAQ
+      faqTitle: "Frequently Asked Questions",
+      faqQ1: "Is the quote free?", faqA1: "Yes, absolutely. We offer a free initial consultation and estimate.",
+      faqQ3: "How long does a project take?", faqA3: "It depends. Renovations take 3-6 weeks, villas take several months.",
+      faqQ4: "Do you have a warranty?", faqA4: "Yes, all our structural work is covered by a professional warranty to ensure your peace of mind."
   },
   fr:{
-      home:"Accueil", about:"À Propos", services:"Nos Services", projects:"Nos Projets", contact:"Contactez-nous", getQuote:"Demander un devis",
+      home:"Accueil", about:"À Propos", services:"Services", projects:"Projets", contact:"Contact", getQuote:"Demander un devis", faqMenu: "FAQ",
       heroTitle:"Construire Votre Vision", heroDesc:"Services de Construction, Rénovation & Immobilier",
-      aboutText:"AL-BADR MRNA IMMO est une société professionnelle de construction, rénovation et immobilier offrant des projets de haute qualité avec précision, techniques modernes et respect des délais.",
+      aboutText:"AL-BADR MRNA IMMO est une société professionnelle spécialisée dans la construction, la rénovation et les travaux de finition. Nous transformons vos rêves en réalité avec une précision experte et des matériaux de qualité.",
       yearsExp:"Années d'Expérience", projComp:"Projets Réalisés", clientSat:"Satisfaction Client",
-      serviceConstruction:"Construction", serviceConstructionDesc:"Services de construction résidentielle et commerciale.",
-      serviceRenovation:"Rénovation", serviceRenovationDesc:"Solutions modernes de rénovation et de remodelage.",
-      serviceFinishing:"Finitions", serviceFinishingDesc:"Finitions intérieures et extérieures de qualité premium.",
-      serviceElectric:"Électricité & Plomberie", serviceElectricDesc:"Installations professionnelles et sécurisées.",
+      serviceConstruction:"Construction", serviceConstructionDesc:"Construction résidentielle et commerciale.",
+      serviceRenovation:"Rénovation", serviceRenovationDesc:"Solutions modernes de rénovation.",
+      serviceFinishing:"Finitions", serviceFinishingDesc:"Finitions intérieures et extérieures.",
+      serviceElectric:"Électricité", serviceElectricDesc:"Installations professionnelles.",
       catRenovation:"Rénovation", catFinishing:"Finitions", catConstruction:"Construction",
-      proj1Title:"Rénovation Villa de Luxe", proj1Desc:"Transformation complète d'une villa ancienne. Suppression des murs porteurs pour créer un espace ouvert.",
-      proj2Title:"Finition Appartement Moderne", proj2Desc:"Finition haut de gamme pour un appartement de 120m². Sol en marbre, plafonds en gypse personnalisés et éclairage LED.",
-      proj3Title:"Construction Bureau Commercial", proj3Desc:"Construction d'un espace de bureau sur 2 étages. Cloisons en verre insonorisées et aménagement ergonomique.",
+      proj1Title:"Rénovation Villa de Luxe", proj1Desc:"Rénovation complète d'une villa à Bouskoura. Modernisation de la façade, réaménagement intérieur et piscine.",
+      proj2Title:"Finition Appartement", proj2Desc:"Finition haut de gamme pour un appartement de 120m² au quartier Maarif. Peinture, carrelage et menuiserie sur mesure.",
+      proj3Title:"Bureau Commercial", proj3Desc:"Construction d'un espace de bureau commercial sur 2 niveaux à Agdal. Structure en béton armé et aménagements modernes.",
       btnBefore:"Voir Avant", btnAfter:"Voir Résultat",
-      formName:"Votre Nom", formEmail:"Adresse Email", formPhone:"Numéro de Téléphone", formMessage:"Votre Message", formSubmit:"Envoyer le message"
+      testimonialsTitle: "Ce que disent nos clients", btnLeaveReview: "Donner votre avis",
+      modalTitle: "Votre Avis Compte", modalPlaceholder: "Décrivez votre expérience...",
+      formName:"Votre Nom", formEmail:"Email", formPhone:"Téléphone", formMessage:"Message", formSubmit:"Envoyer",
+      review1:"\"Nous avons confié la rénovation de notre villa à AL-BADR. Le résultat dépasse nos attentes. Équipe très professionnelle et respectueuse des délais.\"",
+      review2:"\"Qualité de finition irréprochable pour mon appartement. Ils ont su transformer l'espace avec goût. Je recommande vivement leurs services.\"",
+      review3:"\"Un partenaire fiable pour nos projets de construction. Réactivité et professionnalisme sont les maîtres mots de cette entreprise.\"",
+      // FAQ
+      faqTitle: "Questions Fréquentes",
+      faqQ1: "Le devis est-il gratuit ?", faqA1: "Oui, absolument. Nous offrons une première consultation et une estimation gratuite.",
+      faqQ3: "Quelle est la durée d'un projet ?", faqA3: "Cela dépend. Une rénovation prend 3-6 semaines, une villa plusieurs mois.",
+      faqQ4: "Avez-vous une garantie ?", faqA4: "Oui, tous nos travaux de gros œuvre sont couverts par une garantie professionnelle, assurant la tranquillité d'esprit de nos clients."
   },
   ar:{
-      home:"الرئيسية", about:"معلومات عنا", services:"خدماتنا", projects:"مشاريعنا", contact:"اتصل بنا", getQuote:"طلب عرض سعر",
+      home:"الرئيسية", about:"عنا", services:"خدماتنا", projects:"مشاريعنا", contact:"اتصل", getQuote:"طلب عرض", faqMenu: "أسئلة شائعة",
       heroTitle:"بناء رؤيتك", heroDesc:"خدمات البناء والتجديد والعقارات",
-      aboutText:"شركة AL-BADR MRNA IMMO هي شركة محترفة في البناء والتجديد والعقارات تقدم مشاريع عالية الجودة بدقة وتقنيات حديثة واحترام كامل للمواعيد.",
+      aboutText:"شركة AL-BADR MRNA IMMO هي شركة محترفة متخصصة في البناء والتجديد وأعمال التشطيب. نحول أحلامكم إلى واقع بدقة متناهية ومواد عالية الجودة.",
       yearsExp:"سنوات الخبرة", projComp:"مشاريع منجزة", clientSat:"رضاء العملاء",
       serviceConstruction:"البناء", serviceConstructionDesc:"خدمات البناء السكنية والتجارية.",
-      serviceRenovation:"التجديد", serviceRenovationDesc:"حلول حديثة للتجديد وإعادة التصميم.",
-      serviceFinishing:"التشطيبات", serviceFinishingDesc:"تشطيبات داخلية وخارجية بجودة عالية.",
-      serviceElectric:"الكهرباء والسباكة", serviceElectricDesc:"تركيبات احترافية وآمنة.",
+      serviceRenovation:"التجديد", serviceRenovationDesc:"حلول حديثة للتجديد.",
+      serviceFinishing:"التشطيبات", serviceFinishingDesc:"تشطيبات داخلية وخارجية.",
+      serviceElectric:"الكهرباء", serviceElectricDesc:"تركيبات احترافية.",
       catRenovation:"تجديد", catFinishing:"تشطيبات", catConstruction:"بناء",
-      proj1Title:"تجديد فيلا فاخرة", proj1Desc:"تحول كامل لفيلا قديمة. قمنا بإزالة الجدران الحاملة لإنشاء مساحة معيشة مفتوحة.",
-      proj2Title:"تشطيب شقة حديثة", proj2Desc:"تشطيب عالي الجودة لشقة بمساحة 120 متر مربع. شملت أرضيات رخامية، أسقف جبسية مخصصة، وإضاءة LED مخفية.",
-      proj3Title:"بناء مكتب تجاري", proj3Desc:"بناء مساحة مكتبية من طابقين محسنة للإنتاجية. قواطع زجاجية عازلة للصوت وتخطيط مريح.",
+      proj1Title:"تجديد فيلا فاخرة", proj1Desc:"تجديد كامل لفيلا في بوسكورة. تحديث الواجهة، إعادة تصميم داخلي ومسبح.",
+      proj2Title:"تشطيب شقة", proj2Desc:"تشطيب عالي الجودة لشقة بمساحة 120 متر مربع في حي المعاريف. صباغة، تبليط ونجارة حسب الطلب.",
+      proj3Title:"بناء مكتب", proj3Desc:"بناء مساحة مكتبية تجارية من طابقين في أكدال. هيكل خرساني مسلح وتجهيزات حديثة.",
       btnBefore:"عرض قبل", btnAfter:"عرض النتيجة",
-      formName:"اسمك", formEmail:"البريد الإلكتروني", formPhone:"رقم الهاتف", formMessage:"رسالتك", formSubmit:"إرسال الرسالة"
+      testimonialsTitle: "آراء عملائنا", btnLeaveReview: "إعطاء رأيك",
+      modalTitle: "رأيك يهمنا", modalPlaceholder: "صف تجربتك...",
+      formName:"الاسم", formEmail:"البريد", formPhone:"الهاتف", formMessage:"الرسالة", formSubmit:"إرسال",
+      review1:"\"قمت بتجديد فيلتي مع البدر وأنا سعيد جداً. الالتزام بالمواعيد وجودة المواد ممتازة. فريق جدير بالثقة.\"",
+      review2:"\"عمل تشطيب ممتاز لشقتي. الاهتمام بالتفاصيل يصنع الفرق. أنصح بخدماتهم بشدة.\"",
+      review3:"\"شريك موثوق لمشاريع البناء الخاصة بنا. الاستجابة والاحترافية هي شعار هذه الشركة.\"",
+      // FAQ
+      faqTitle: "الأسئلة الشائعة",
+      faqQ1: "هل التقدير مجاني؟", faqA1: "نعم بالتأكيد. نقدم استشارة أولية وتقدير مجاني لجميع المشاريع.",
+      faqQ3: "كم تستغرق المشاريع؟", faqA3: "يعتمد ذلك على الحجم. التجديدات تستغرق 3-6 أسابيع، والفيلات عدة أشهر.",
+      faqQ4: "هل لديكم ضمان؟", faqA4: "نعم، جميع أعمال البناء لدينا مغطاة بضمان مهني لضمان راحة بالك."
   }
 };
 
-/* LANG SWITCHER */
-const langButton = document.getElementById("langButton");
-const langOptions = document.getElementById("langOptions");
-
-langButton.addEventListener("click", ()=>langOptions.style.display = langOptions.style.display==="flex"?"none":"flex");
-
-document.querySelectorAll(".langOption").forEach(opt=>{
-  opt.addEventListener("click", ()=>{
-    const lang = opt.getAttribute("data-lang");
-    langButton.textContent = opt.textContent;
-    langOptions.style.display="none";
-    document.documentElement.lang = lang; 
-    setLanguage(lang);
-  });
-});
-
-function setLanguage(lang){
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    const key = el.getAttribute("data-key");
-    if(translations[lang][key]){
-      if(el.tagName==="INPUT"||el.tagName==="TEXTAREA") el.placeholder=translations[lang][key];
-      else el.textContent=translations[lang][key];
-    }
-  });
-  if(lang==="ar"){ document.body.dir="rtl"; document.body.style.textAlign="right"; }
-  else { document.body.dir="ltr"; document.body.style.textAlign="left"; }
-}
-setLanguage("fr");
-
-/* SMOOTH SCROLL */
-document.querySelectorAll("a[href^='#']").forEach(link=>{
-  link.addEventListener("click", e=>{
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
-    if(target) target.scrollIntoView({behavior:"smooth"});
-  });
-});
-
-/* FORM */
-const contactForm=document.getElementById("contactForm");
-contactForm.addEventListener("submit", async function(e){
-  e.preventDefault();
-  const formData=new FormData(contactForm);
-  try{
-    const response=await fetch(contactForm.action,{method:"POST",body:formData,headers:{"Accept":"application/json"}});
-    if(response.ok){ alert("✅ Votre message a été envoyé!"); contactForm.reset(); }
-    else alert("⚠️ Une erreur s'est produite.");
-  } catch { alert("⚠️ Erreur d'envoi."); }
-});
-
-/* =========================================
-   SCROLL ANIMATIONS OBSERVER (New Addition)
-   ========================================= */
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-el');
-        } 
+/* LANG & SCROLL */
+const langBtn=document.getElementById("langButton"), langOpts=document.getElementById("langOptions");
+langBtn.addEventListener("click", ()=>langOpts.style.display=langOpts.style.display==="flex"?"none":"flex");
+document.querySelectorAll(".langOption").forEach(o=>{o.addEventListener("click",()=>{
+    const l=o.getAttribute("data-lang");document.documentElement.lang=l;langOpts.style.display="none";langBtn.textContent=o.textContent;
+    document.querySelectorAll("[data-key]").forEach(e=>{
+        if(translations[l][e.getAttribute("data-key")]){
+            if(e.tagName==="INPUT"||e.tagName==="TEXTAREA")e.placeholder=translations[l][e.getAttribute("data-key")];
+            else e.textContent=translations[l][e.getAttribute("data-key")];
+        }
     });
+    document.body.dir=l==="ar"?"rtl":"ltr";document.body.style.textAlign=l==="ar"?"right":"left";
+})});
+document.querySelectorAll("a[href^='#']").forEach(l=>{l.addEventListener("click",e=>{e.preventDefault();const t=document.querySelector(l.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth"})})});
+
+/* FORMS */
+const cf=document.getElementById("contactForm"), rf=document.getElementById("reviewForm");
+async function hSub(e,f){e.preventDefault();try{if((await fetch(f.action,{method:"POST",body:new FormData(f),headers:{"Accept":"application/json"}})).ok){alert("✅ Envoyé!");f.reset();if(f.id==='reviewForm')closeReviewModal()}else alert("⚠️ Erreur.")}catch{alert("⚠️ Erreur.")}}
+if(cf)cf.addEventListener("submit",e=>hSub(e,cf));if(rf)rf.addEventListener("submit",e=>hSub(e,rf));
+
+/* ANIMATIONS */
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show-el')})});
+document.querySelectorAll('section,.card,.project-card,.about-stats div,.testi-card,.accordion-item').forEach(e=>{e.classList.add('hidden-el');obs.observe(e)});
+window.addEventListener('load',()=>{const p=document.getElementById('preloader');p.style.opacity='0';setTimeout(()=>p.style.display='none',500)});
+window.addEventListener('scroll',()=>{
+    document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50);
+    document.querySelector('.scroll-progress').style.width=((document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight))*100)+'%';
 });
 
-// Select sections and cards to animate
-const hiddenElements = document.querySelectorAll('section, .card, .project-card, .about-stats div');
-hiddenElements.forEach((el) => el.classList.add('hidden-el'));
-hiddenElements.forEach((el) => observer.observe(el));
+/* COUNTERS */
+const stObs=new IntersectionObserver((e,o)=>{e.forEach(x=>{if(x.isIntersecting){
+    x.target.querySelectorAll('h3').forEach(c=>{
+        const t=+c.getAttribute('data-target'), i=t/200; let n=0;
+        const u=()=>{if(n<t){n+=i;c.innerText=Math.ceil(n)+(t===100?'%':'+');setTimeout(u,15)}else c.innerText=t+(t===100?'%':'+')};u();
+    });o.unobserve(x.target);
+}})});
+const stSec=document.querySelector('.about-stats');if(stSec)stObs.observe(stSec);
 </script>
 </body>
 </html>
