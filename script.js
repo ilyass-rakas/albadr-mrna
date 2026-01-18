@@ -1,3 +1,5 @@
+/* SCRIPT.JS - Auto Slider Fixed for Online Images */
+
 // Smooth scrolling
 document.querySelectorAll("a[href^='#']").forEach(link => {
   link.addEventListener("click", e => {
@@ -14,17 +16,17 @@ if(menuToggle && navLinks){
     document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click', ()=>{navLinks.classList.remove('active')})});
 }
 
-/* IMAGE AUTO SLIDER (5 SECONDS) */
+/* IMAGE AUTO SLIDER (5 SECONDS) - USING ONLINE IMAGES */
 document.addEventListener("DOMContentLoaded", () => {
     const villaImg = document.getElementById('img-1');
-    
-    // Only run if the image exists on the page
     if (villaImg) {
-        const imgAfter = 'images/villa-after.png';
-        const imgBefore = 'images/villa-before.png';
-        let isShowingAfter = true; // Starts with 'after' image by default
+        // Modern Villa (After)
+        const imgAfter = 'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800';
+        // Old House (Before)
+        const imgBefore = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800'; 
+        
+        let isShowingAfter = true;
 
-        // Switch every 5000ms (5 seconds)
         setInterval(() => {
             if (isShowingAfter) {
                 villaImg.src = imgBefore;
