@@ -1,5 +1,3 @@
-/* SCRIPT.JS - Auto Slider Fixed for Online Images */
-
 // Smooth scrolling
 document.querySelectorAll("a[href^='#']").forEach(link => {
   link.addEventListener("click", e => {
@@ -16,28 +14,13 @@ if(menuToggle && navLinks){
     document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click', ()=>{navLinks.classList.remove('active')})});
 }
 
-/* IMAGE AUTO SLIDER (5 SECONDS) - USING ONLINE IMAGES */
-document.addEventListener("DOMContentLoaded", () => {
-    const villaImg = document.getElementById('img-1');
-    if (villaImg) {
-        // Modern Villa (After)
-        const imgAfter = 'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800';
-        // Old House (Before)
-        const imgBefore = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800'; 
-        
-        let isShowingAfter = true;
-
-        setInterval(() => {
-            if (isShowingAfter) {
-                villaImg.src = imgBefore;
-                isShowingAfter = false;
-            } else {
-                villaImg.src = imgAfter;
-                isShowingAfter = true;
-            }
-        }, 5000); 
-    }
-});
+/* IMAGE TOGGLE */
+let isBefore=false;
+function toggleImage(id,b,a,btn){
+    const img=document.getElementById(id), span=btn.querySelector('span'), cur=document.documentElement.lang||'fr';
+    if(!isBefore){img.src=b;span.textContent=translations[cur].btnAfter;isBefore=true;}
+    else{img.src=a;span.textContent=translations[cur].btnBefore;isBefore=false;}
+}
 
 /* FAQ ACCORDION LOGIC */
 document.querySelectorAll('.accordion-header').forEach(header => {
@@ -80,6 +63,7 @@ const translations = {
       proj1Title:"Luxury Villa", proj1Desc:"Complete renovation of a villa in Bouskoura. Facade modernization, interior redesign, and swimming pool.",
       proj2Title:"Apartment Finishing", proj2Desc:"High-end finishing for a 120m² apartment in Maarif district. Painting, tiling, and custom carpentry.",
       proj3Title:"Office Build", proj3Desc:"Construction of a commercial office space on 2 levels in Agdal. Reinforced concrete structure and modern amenities.",
+      btnBefore:"Show Before", btnAfter:"Show Result",
       testimonialsTitle: "What Our Clients Say", btnLeaveReview: "Leave a Review",
       modalTitle: "Your Feedback", modalPlaceholder: "Describe your experience...",
       formName:"Your Name", formEmail:"Email", formPhone:"Phone", formMessage:"Message", formSubmit:"Send Message",
@@ -104,6 +88,7 @@ const translations = {
       proj1Title:"Rénovation Villa de Luxe", proj1Desc:"Rénovation complète d'une villa à Bouskoura. Modernisation de la façade, réaménagement intérieur et piscine.",
       proj2Title:"Finition Appartement", proj2Desc:"Finition haut de gamme pour un appartement de 120m² au quartier Maarif. Peinture, carrelage et menuiserie sur mesure.",
       proj3Title:"Bureau Commercial", proj3Desc:"Construction d'un espace de bureau commercial sur 2 niveaux à Agdal. Structure en béton armé et aménagements modernes.",
+      btnBefore:"Voir Avant", btnAfter:"Voir Résultat",
       testimonialsTitle: "Ce que disent nos clients", btnLeaveReview: "Donner votre avis",
       modalTitle: "Votre Avis Compte", modalPlaceholder: "Décrivez votre expérience...",
       formName:"Votre Nom", formEmail:"Email", formPhone:"Téléphone", formMessage:"Message", formSubmit:"Envoyer",
@@ -128,6 +113,7 @@ const translations = {
       proj1Title:"تجديد فيلا فاخرة", proj1Desc:"تجديد كامل لفيلا في بوسكورة. تحديث الواجهة، إعادة تصميم داخلي ومسبح.",
       proj2Title:"تشطيب شقة", proj2Desc:"تشطيب عالي الجودة لشقة بمساحة 120 متر مربع في حي المعاريف. صباغة، تبليط ونجارة حسب الطلب.",
       proj3Title:"بناء مكتب", proj3Desc:"بناء مساحة مكتبية تجارية من طابقين في أكدال. هيكل خرساني مسلح وتجهيزات حديثة.",
+      btnBefore:"عرض قبل", btnAfter:"عرض النتيجة",
       testimonialsTitle: "آراء عملائنا", btnLeaveReview: "إعطاء رأيك",
       modalTitle: "رأيك يهمنا", modalPlaceholder: "صف تجربتك...",
       formName:"الاسم", formEmail:"البريد", formPhone:"الهاتف", formMessage:"الرسالة", formSubmit:"إرسال",
@@ -181,3 +167,64 @@ const stObs=new IntersectionObserver((e,o)=>{e.forEach(x=>{if(x.isIntersecting){
     });o.unobserve(x.target);
 }})});
 const stSec=document.querySelector('.about-stats');if(stSec)stObs.observe(stSec);
+
+/* =========================================
+   GALERIE DYNAMIQUE (IMAGE + VIDEO)
+   ========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryGrid = document.getElementById("dynamic-gallery-grid");
+  const gallerySection = document.getElementById('gallery');
+
+  if (galleryGrid) {
+    fetch('get_images.php')
+      .then(response => {
+        if (!response.ok) throw new Error("Erreur réseau");
+        return response.json();
+      })
+      .then(files => {
+        galleryGrid.innerHTML = ''; 
+
+        // IF NO FILES, HIDE THE SECTION
+        if (!files || files.length === 0) {
+            if(gallerySection) gallerySection.style.display = 'none';
+            return;
+        }
+
+        // RENDER EACH FILE
+        files.forEach(fileUrl => {
+            const card = document.createElement('div');
+            card.className = 'project-card hidden-el'; 
+            
+            // Check if it's a video file
+            const isVideo = fileUrl.match(/\.(mp4|webm|ogg)$/i);
+            
+            let contentHtml = '';
+            if (isVideo) {
+                // Video HTML
+                contentHtml = `
+                    <video controls style="width:100%; height:100%; object-fit:cover; background:#000;">
+                        <source src="${fileUrl}" type="video/mp4">
+                    </video>
+                    <span class="category-badge" style="background:gold; color:black;"><i class="fas fa-play"></i> Vidéo</span>
+                `;
+            } else {
+                // Image HTML
+                contentHtml = `
+                    <img src="${fileUrl}" alt="Projet" style="width:100%; height:100%; object-fit:cover;">
+                    <span class="category-badge" style="background:gold; color:black;">Récent</span>
+                `;
+            }
+
+            card.innerHTML = `<div class="image-wrapper" style="height: 300px;">${contentHtml}</div>`;
+            galleryGrid.appendChild(card);
+            
+            // Add animation
+            if(typeof obs !== 'undefined') obs.observe(card);
+        });
+      })
+      .catch(err => {
+          console.error("Erreur galerie:", err);
+          if(gallerySection) gallerySection.style.display = 'none';
+      });
+  }
+});

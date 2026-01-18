@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AL-BADR MRNA IMMO | Construction & Rénovation</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5973/5973800.png" type="image/png">
+    <link rel="icon" href="logo.png" type="image/png">
     <meta name="description" content="AL-BADR MRNA IMMO: Expert en construction, rénovation et finition.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<div id="preloader"><img src="logo.png" alt="Loading..." class="loader-logo"></div>
 <div class="scroll-progress"></div>
 
 <header class="navbar">
     <div class="logo">
-        <i class="fas fa-building" style="color: gold; font-size: 30px;"></i>
-        <span style="margin-left: 10px;">AL-BADR MRNA IMMO</span>
+        <img src="logo.png" alt="AL-BADR" onerror="this.style.display='none'">
+        <span>AL-BADR MRNA IMMO</span>
     </div>
     <div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
     <nav class="nav-links">
@@ -31,7 +32,7 @@
 
 <section id="home" class="hero">
   <div class="hero-content">
-    <i class="fas fa-city hero-logo" style="font-size: 100px; color: gold; margin-bottom: 20px;"></i>
+    <img src="logo.png" alt="Logo Center" class="hero-logo">
     <h1 data-key="heroTitle">Construire Votre Vision</h1>
     <p data-key="heroDesc">Services de Construction, Rénovation & Immobilier</p>
     <div class="hero-buttons">
@@ -64,10 +65,10 @@
 <section id="projects" class="projects">
   <h2 data-key="projects">Nos Projets</h2>
   <div class="project-grid">
-    
     <div class="project-card">
         <div class="image-wrapper">
-            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop" id="img-1" alt="Villa">
+            <img src="images/villa-after.png" id="img-1" alt="Villa">
+            <button class="toggle-btn" onclick="toggleImage('img-1', 'images/villa-before.png', 'images/villa-after.png', this)"><span data-key="btnBefore">Voir Avant</span></button>
             <span class="category-badge" data-key="catRenovation">Rénovation</span>
         </div>
         <div class="project-content">
@@ -76,10 +77,9 @@
             <p data-key="proj1Desc">Rénovation complète d'une villa à Bouskoura. Modernisation de la façade, réaménagement intérieur et piscine.</p>
         </div>
     </div>
-
     <div class="project-card">
         <div class="image-wrapper">
-            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800&auto=format&fit=crop" alt="Apartment">
+            <img src="images/apt-finish.png" alt="Apartment">
             <span class="category-badge" data-key="catFinishing">Finitions</span>
         </div>
         <div class="project-content">
@@ -88,10 +88,9 @@
             <p data-key="proj2Desc">Finition haut de gamme pour un appartement de 120m² au quartier Maarif. Peinture, carrelage et menuiserie sur mesure.</p>
         </div>
     </div>
-
     <div class="project-card">
         <div class="image-wrapper">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Office">
+            <img src="images/office-main.png" alt="Office">
             <span class="category-badge" data-key="catConstruction">Construction</span>
         </div>
         <div class="project-content">
@@ -105,27 +104,12 @@
 
 <section id="gallery" class="projects" style="background: #111; border-top: 1px solid #222;">
   <h2 style="color: gold; text-align: center; margin-bottom: 40px; font-size: 32px; text-transform: uppercase; letter-spacing: 1px;">
-      Galerie
+      Galerie Récente
   </h2>
-  <div class="project-grid">
-      <div class="project-card">
-          <div class="image-wrapper" style="height: 300px;">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="Projet" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-      </div>
-      <div class="project-card">
-          <div class="image-wrapper" style="height: 300px;">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800" alt="Projet" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-      </div>
-      <div class="project-card">
-          <div class="image-wrapper" style="height: 300px;">
-              <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=800" alt="Projet" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-      </div>
+  <div class="project-grid" id="dynamic-gallery-grid" style="min-height: 100px;">
+      <p style="text-align:center; color:#666; width:100%;">Chargement...</p>
   </div>
 </section>
-
 <section id="testimonials" class="testimonials">
   <h2 data-key="testimonialsTitle">Ce que disent nos clients</h2>
   <div class="testimonial-grid">
