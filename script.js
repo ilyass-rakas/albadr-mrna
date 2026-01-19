@@ -73,7 +73,14 @@ const translations = {
       faqTitle: "Frequently Asked Questions",
       faqQ1: "Is the quote free?", faqA1: "Yes, absolutely. We offer a free initial consultation and estimate.",
       faqQ3: "How long does a project take?", faqA3: "It depends. Renovations take 3-6 weeks, villas take several months.",
-      faqQ4: "Do you have a warranty?", faqA4: "Yes, all our structural work is covered by a professional warranty to ensure your peace of mind."
+      faqQ4: "Do you have a warranty?", faqA4: "Yes, all our structural work is covered by a professional warranty to ensure your peace of mind.",
+      
+      // NEW PROCESS KEYS
+      processTitle: "Our Process",
+      step1Title: "1. Consultation", step1Desc: "Discussing needs and site visit.",
+      step2Title: "2. Study & Quote", step2Desc: "Technical proposal and detailed estimate.",
+      step3Title: "3. Execution", step3Desc: "Work execution with rigorous monitoring.",
+      step4Title: "4. Delivery", step4Desc: "Site handover and key delivery."
   },
   fr:{
       home:"Accueil", about:"À Propos", services:"Services", projects:"Projets", contact:"Contact", getQuote:"Demander un devis", faqMenu: "FAQ",
@@ -98,7 +105,14 @@ const translations = {
       faqTitle: "Questions Fréquentes",
       faqQ1: "Le devis est-il gratuit ?", faqA1: "Oui, absolument. Nous offrons une première consultation et une estimation gratuite.",
       faqQ3: "Quelle est la durée d'un projet ?", faqA3: "Cela dépend. Une rénovation prend 3-6 semaines, une villa plusieurs mois.",
-      faqQ4: "Avez-vous une garantie ?", faqA4: "Oui, tous nos travaux de gros œuvre sont couverts par une garantie professionnelle, assurant la tranquillité d'esprit de nos clients."
+      faqQ4: "Avez-vous une garantie ?", faqA4: "Oui, tous nos travaux de gros œuvre sont couverts par une garantie professionnelle, assurant la tranquillité d'esprit de nos clients.",
+
+      // NEW PROCESS KEYS
+      processTitle: "Notre Processus",
+      step1Title: "1. Consultation", step1Desc: "Discussion de vos besoins et visite du site.",
+      step2Title: "2. Étude & Devis", step2Desc: "Proposition technique et estimation détaillée.",
+      step3Title: "3. Réalisation", step3Desc: "Exécution des travaux avec suivi rigoureux.",
+      step4Title: "4. Livraison", step4Desc: "Réception du chantier et remise des clés."
   },
   ar:{
       home:"الرئيسية", about:"عنا", services:"خدماتنا", projects:"مشاريعنا", contact:"اتصل", getQuote:"طلب عرض", faqMenu: "أسئلة شائعة",
@@ -123,7 +137,14 @@ const translations = {
       faqTitle: "الأسئلة الشائعة",
       faqQ1: "هل التقدير مجاني؟", faqA1: "نعم بالتأكيد. نقدم استشارة أولية وتقدير مجاني لجميع المشاريع.",
       faqQ3: "كم تستغرق المشاريع؟", faqA3: "يعتمد ذلك على الحجم. التجديدات تستغرق 3-6 أسابيع، والفيلات عدة أشهر.",
-      faqQ4: "هل لديكم ضمان؟", faqA4: "نعم، جميع أعمال البناء لدينا مغطاة بضمان مهني لضمان راحة بالك."
+      faqQ4: "هل لديكم ضمان؟", faqA4: "نعم، جميع أعمال البناء لدينا مغطاة بضمان مهني لضمان راحة بالك.",
+
+      // NEW PROCESS KEYS
+      processTitle: "منهجية العمل",
+      step1Title: "1. استشارة", step1Desc: "مناقشة احتياجاتكم وزيارة الموقع.",
+      step2Title: "2. دراسة وتقدير", step2Desc: "اقتراح تقني وتقدير مفصل للتكلفة.",
+      step3Title: "3. الإنجاز", step3Desc: "تنفيذ الأعمال بمراقبة دقيقة ومستمرة.",
+      step4Title: "4. التسليم", step4Desc: "تسليم الموقع ومفاتيح المشروع."
   }
 };
 
