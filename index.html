@@ -65,10 +65,15 @@
 <section id="projects" class="projects">
   <h2 data-key="projects">Nos Projets</h2>
   <div class="project-grid">
+    
     <div class="project-card">
         <div class="image-wrapper">
-            <img src="images/villa-after.png" id="img-1" alt="Villa">
-            <button class="toggle-btn" onclick="toggleImage('img-1', 'images/villa-before.png', 'images/villa-after.png', this)"><span data-key="btnBefore">Voir Avant</span></button>
+            <img src="images/villa-after.png" 
+                 id="img-1" 
+                 alt="Villa" 
+                 class="auto-slider"
+                 data-before="images/villa-before.png" 
+                 data-after="images/villa-after.png">
             <span class="category-badge" data-key="catRenovation">Rénovation</span>
         </div>
         <div class="project-content">
@@ -110,6 +115,7 @@
       <p style="text-align:center; color:#666; width:100%;">Chargement...</p>
   </div>
 </section>
+
 <section id="testimonials" class="testimonials">
   <h2 data-key="testimonialsTitle">Ce que disent nos clients</h2>
   <div class="testimonial-grid">

@@ -222,3 +222,9 @@ footer p { color: #888; margin-bottom: 10px; }
 .loader-logo { width: 100px; animation: pulse 1.5s infinite; }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
 .scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: gold; z-index: 2000; transition: width 0.1s linear; }
+
+/* DYNAMIC SLIDER ADDITION */
+.auto-slider {
+    transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
+}

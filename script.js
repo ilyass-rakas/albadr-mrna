@@ -14,7 +14,7 @@ if(menuToggle && navLinks){
     document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click', ()=>{navLinks.classList.remove('active')})});
 }
 
-/* IMAGE TOGGLE */
+/* IMAGE TOGGLE (Legacy - kept for safety, though specific button was removed) */
 let isBefore=false;
 function toggleImage(id,b,a,btn){
     const img=document.getElementById(id), span=btn.querySelector('span'), cur=document.documentElement.lang||'fr';
@@ -227,4 +227,58 @@ document.addEventListener("DOMContentLoaded", () => {
           if(gallerySection) gallerySection.style.display = 'none';
       });
   }
+});
+
+/* =========================================
+   DYNAMIC IMAGE SLIDER (AUTO & MANUAL)
+   ========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const sliderImg = document.getElementById('img-1');
+    
+    if (sliderImg) {
+        const imgAfter = sliderImg.getAttribute('data-after');
+        const imgBefore = sliderImg.getAttribute('data-before');
+        let isShowingAfter = true;
+        let slideInterval;
+
+        // Function to switch images with fade effect
+        function swapImage() {
+            // 1. Fade out
+            sliderImg.style.opacity = '0';
+            
+            setTimeout(() => {
+                // 2. Change Source
+                if (isShowingAfter) {
+                    sliderImg.src = imgBefore;
+                    isShowingAfter = false;
+                } else {
+                    sliderImg.src = imgAfter;
+                    isShowingAfter = true;
+                }
+                
+                // 3. Fade in
+                sliderImg.style.opacity = '1';
+            }, 500); // Wait 500ms (matches CSS transition)
+        }
+
+        // Start the automatic loop (every 3 seconds)
+        function startSlider() {
+            slideInterval = setInterval(swapImage, 3000); 
+        }
+
+        // Stop the loop (when interacting)
+        function stopSlider() {
+            clearInterval(slideInterval);
+        }
+
+        // Initialize
+        startSlider();
+
+        // MANUAL: Click to swap immediately and pause briefly
+        sliderImg.addEventListener('click', () => {
+            stopSlider(); // Stop auto
+            swapImage();  // Swap immediately
+            startSlider(); // Restart auto timer
+        });
+    }
 });
